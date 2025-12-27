@@ -2,7 +2,7 @@ import '../styles/Layout.scss';
 
 function Layout({ children }) {
   return (
-    <div className="layout-root">
+    <div className="page-container">
       {children}
     </div>
   );
