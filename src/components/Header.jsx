@@ -1,0 +1,33 @@
+import "./../styles/Header.scss";
+import Layout from "./Layout";
+
+const Header = () => {
+  return (
+    <header>
+      <Layout>
+        <div className="header">
+          <div className="profile-card">
+            <figure className="profile-card__photo">
+              <img src="./profile-photo.jpeg" alt="profile-photo" />
+            </figure>
+            <div className="profile-card__info">
+              <h3 className="profile-card__name">León Cantillo</h3>
+              <h4 className="profile-card__professional-title">Software Developer</h4>
+            </div>
+          </div>
+
+          <nav className="navbar">
+            <ul className="navbar__list">
+              <li className="navbar__item"><a href="#about" className="navbar__link">Sobre mí</a></li>
+              <li className="navbar__item"><a href="#skills" className="navbar__link">Habilidades</a></li>
+              <li className="navbar__item"><a href="#projects" className="navbar__link">Proyectos</a></li>
+              <li className="navbar__item"><a href="#contact" className="navbar__link">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </Layout>
+    </header>
+  );
+};
+
+export default Header;

@@ -1,0 +1,68 @@
+header {
+    position: sticky;
+        top: 0;
+    backdrop-filter: blur(40px);
+
+    z-index: 1000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    .profile-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .profile-card__photo {
+            margin: 0;
+
+            img {
+                height: 60px;
+                width: 60px;
+                border-radius: 50px;
+                object-fit: cover;
+            }
+        }
+
+        .profile-card__info {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+
+            .profile-card__name {
+                margin: 0;
+                font-weight: 500;
+            }
+
+            .profile-card__professional-title {
+                margin: 0;
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .navbar .navbar__list {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+
+        li {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+
+.header {
+    flex-wrap: wrap-reverse;
+}
+    
+}
