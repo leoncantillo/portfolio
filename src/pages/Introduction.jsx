@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import './../styles/section_hero.scss';
 
 const Introduction = () => {
   return (
@@ -13,7 +14,21 @@ const Introduction = () => {
         <Layout>
 
           <h2 className="hero__professional-title">Software Developer</h2>
-          <h1>León Cantillo</h1>
+          <h1 className="hero__name">León Cantillo</h1>
+          <ul className="hero__networks">
+            <li className="hero__networks-button hero__networks-button--download button">
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <i className="fa-solid fa-download"></i> Descargar CV</a>
+            </li>
+            <li className="hero__networks-button hero__networks-button--linkedin button">
+              <a href="https://www.linkedin.com/in/leoncantillo/" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            </li>
+            <li className="hero__networks-button hero__networks-button--github button">
+              <a href="https://github.com/leoncantillo/" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-github"></i> Github</a>
+            </li>
+          </ul>
         </Layout>
 
       </section>
