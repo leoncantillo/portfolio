@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import './../styles/section_hero.scss';
 
 const Introduction = () => {
   return (
