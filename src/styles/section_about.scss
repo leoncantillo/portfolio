@@ -1,0 +1,16 @@
+.about__container {
+    display: grid;
+        grid-template-columns: auto auto;
+
+    .about__description {
+        text-align: left;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .about__container {
+        grid-template-columns: auto;
+        gap: 40px;
+    }
+}

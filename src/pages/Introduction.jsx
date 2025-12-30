@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Layout from "../components/Layout";
 import './../styles/introduction.scss';
 import './../styles/section_hero.scss';
+import './../styles/section_about.scss';
 
 const Introduction = () => {
   return (
@@ -39,7 +40,7 @@ const Introduction = () => {
         <Layout>
           <div className="about__container">
             <div className="about__info">
-          <h2 className="about__title">Sobre mí</h2>
+              <h2 className="about__title">Sobre mí</h2>
               <p className="about__description">
                 Soy desarrollador backend con una base sólida en frontend. Aunque puedo construir aplicaciones completas de extremo a extremo, mi mayor fortaleza y especialización se encuentran en el backend: arquitectura, lógica de negocio, APIs y manejo de datos. Trabajo el frontend con un conjunto específico de tecnologías que domino, suficientes para crear interfaces funcionales y bien integradas.
                 <br /><br />
