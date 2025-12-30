@@ -1,0 +1,37 @@
+.hero__networks {
+    display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    list-style: none;
+    max-width: 680px;
+    place-self: center;
+    
+    .hero__networks-button {
+        display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero__networks {
+    grid-template-columns: repeat(2, 1fr);
+
+    .hero__networks-button--github {
+      grid-column: span 2;
+    }
+  }
+}
+
+/* Móvil */
+@media (max-width: 380px) {
+  .hero__networks {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__networks-button {
+    grid-column: 1 / 3;
+  }
+}
