@@ -1,16 +1,17 @@
 .hero__networks {
-    display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-    list-style: none;
-    max-width: 680px;
-    place-self: center;
-    
-    .hero__networks-button {
-        display: flex;
-            align-items: center;
-            justify-content: center;
-    }
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  list-style: none;
+  max-width: 680px;
+  padding: 0;
+  place-self: center;
+  
+  .hero__networks-button {
+    display: flex;
+      align-items: center;
+      justify-content: center;
+  }
 }
 
 
@@ -29,6 +30,7 @@
 @media (max-width: 380px) {
   .hero__networks {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .hero__networks-button {

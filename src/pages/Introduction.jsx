@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import './../styles/introduction.scss';
 import './../styles/section_hero.scss';
+import './../styles/section_about.scss';
 
 const Introduction = () => {
   return (
@@ -36,9 +38,23 @@ const Introduction = () => {
       {/* <!-- About --> */}
       <section className="about" id="about">
         <Layout>
-
-          <h2 className="about__title">Sobre mí</h2>
-          <p className="about__description">Desarrollador Full Stack con pasión por crear experiencias digitales intuitivas y funcionales.</p>
+          <div className="about__container">
+            <div className="about__info">
+              <h2 className="about__title">Sobre mí</h2>
+              <p className="about__description">
+                Soy desarrollador backend con una base sólida en frontend. Aunque puedo construir aplicaciones completas de extremo a extremo, mi mayor fortaleza y especialización se encuentran en el backend: arquitectura, lógica de negocio, APIs y manejo de datos. Trabajo el frontend con un conjunto específico de tecnologías que domino, suficientes para crear interfaces funcionales y bien integradas.
+                <br /><br />
+                No me identifico plenamente con la etiqueta fullstack, ya que considero que no es realista abarcar todas las áreas con la misma profundidad. Prefiero definir mi perfil como un backend especializado con una visión integral del desarrollo.
+                <br /><br />
+                Me gusta liderar equipos y he asumido el rol de arquitecto de software en distintos proyectos. Aunque no ostento ese título de forma oficial, mi comprensión completa del panorama técnico me permite tomar decisiones sólidas y coordinar de manera eficiente las distintas áreas de trabajo.
+              </p>
+            </div>
+            <div className="about__photo">
+              <figure>
+                <img src="./profile-photo.jpeg" alt="" />
+              </figure>
+            </div>
+          </div>
         </Layout>
       </section>
 
