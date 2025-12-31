@@ -228,8 +228,8 @@ const Introduction = () => {
           <h2 className="contact__title">Contáctame</h2>
           <form className="contact__form">
             <input className="contact__input" type="text" placeholder="Tu nombre" />
-            <input className="contact__input" required type="email" placeholder="Tu email" />
-            <textarea className="contact__textarea" required placeholder="Tu mensaje"></textarea>
+            <input className="contact__input" required type="email" placeholder="Tu email *" />
+            <textarea className="contact__textarea" required placeholder="Tu mensaje *"></textarea>
             <button className="contact__button" type="submit">Enviar</button>
           </form>
         </Layout>
