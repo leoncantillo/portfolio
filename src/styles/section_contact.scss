@@ -1,0 +1,15 @@
+.contact__form {
+    display: grid;
+        gap: 20px;
+        grid-template-columns: auto auto auto;
+    padding-top: 40px; 
+
+        .contact__textarea {
+            grid-column: span 3;
+        }
+
+        .contact__button {
+            grid-column: 3 / 4;
+            grid-row: 1;
+        }
+}
