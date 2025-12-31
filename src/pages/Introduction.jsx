@@ -1,5 +1,7 @@
 import Header from "../components/Header";
 import Layout from "../components/Layout";
+import { C, Cpp, Expressjs, Java, JavaScript, Kotlin, MySQL, Nodejs, Php, PostgreSQL, React, Spring, Threejs, TypeScript } from "../components/DevelopSkillLogos";
+import { AmazonWebServices, Docker, Git, MicrosoftAzure, Vite, WordPress } from "../components/DevelopToolLogos";
 import './../styles/introduction.scss';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
@@ -61,25 +63,143 @@ const Introduction = () => {
       {/* <!-- Skills --> */}
       <section className="skills" id="skills">
         <Layout>
+          <div className="skills__container">
           <h2 className="skills__title">Habilidades</h2>
+            <div className="skills__container--server">
+              <h3 className="skills__subtitle">Servidor</h3>
+              <ul className="skills__list">
+                <li className="skills__item">
+                  <picture>
+                    <C />
+                    <figcaption>C</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Cpp />
+                    <figcaption>C++</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Java />
+                    <figcaption>Java</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Kotlin />
+                    <figcaption>Kotlin</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Spring />
+                    <figcaption>Spring</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <TypeScript />
+                    <figcaption>TypeScript</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Expressjs />
+                    <figcaption>ExpressJs</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <MySQL />
+                    <figcaption>MySQL</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <PostgreSQL />
+                    <figcaption>PostgreSQL</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Php />
+                    <figcaption>PHP</figcaption>
+                  </picture>
+                </li>
+              </ul>
+            </div>
+            <div className="skills__container--client">
+              <h3 className="skills__subtitle">Cliente</h3>
+              <ul className="skills__list">
+                <li className="skills__item">
+                  <picture>
+                    <JavaScript />
+                    <figcaption>JavaScript</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item react">
+                  <picture>
+                    <React />
+                    <figcaption>React</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item">
+                  <picture>
+                    <Threejs />
+                    <figcaption>ThreeJs</figcaption>
+                  </picture>
+                </li>
+              </ul>
+            </div>
+            <div className="skills__container--tools">
+              <h3 className="skills__subtitle">Herramientas</h3>
           <ul className="skills__list">
-            <li className="skills__item">JavaScript</li>
-            <li className="skills__item">React</li>
-            <li className="skills__item">Node.js</li>
-            <li className="skills__item">PostgreSQL</li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <Git />
+                    <figcaption>Git</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <Docker />
+                    <figcaption>Docker</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <Nodejs />
+                    <figcaption>NodeJs</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <Vite />
+                    <figcaption>Vite</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <WordPress />
+                    <figcaption>Wordpress</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <MicrosoftAzure />
+                    <figcaption>Microsoft Azure</figcaption>
+                  </picture>
+                </li>
+                <li className="skills__item skills__item--tool">
+                  <picture>
+                    <AmazonWebServices />
+                    <figcaption>AWS</figcaption>
+                  </picture>
+                </li>
           </ul>
-        </Layout>
-      </section>
-
-      {/* <!-- Tools --> */}
-      <section className="tools">
-        <Layout>
-          <h2 className="tools__title">Herramientas</h2>
-          <div className="tools__grid">
-            <div className="tools__item tools__item--icon figma">Figma</div>
-            <div className="tools__item tools__item--icon vscode">VS Code</div>
-            <div className="tools__item tools__item--icon git">Git</div>
-            <div className="tools__item tools__item--icon docker">Docker</div>
+            </div>
           </div>
         </Layout>
       </section>
