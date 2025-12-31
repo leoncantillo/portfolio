@@ -4,6 +4,20 @@
         grid-template-columns: auto auto auto;
     padding-top: 40px; 
 
+    --input-border-color: #707070;
+
+        .contact__input,
+        .contact__textarea {
+            border: 2px var(--input-border-color) solid;
+            border-radius: var(--global-minor-radius);
+            padding: 10px;
+
+            &:focus-visible {
+                border: 2px var(--color-link) solid;
+                outline: none;
+            }
+        }
+
         .contact__textarea {
             grid-column: span 3;
         }
