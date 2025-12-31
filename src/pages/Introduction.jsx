@@ -5,6 +5,7 @@ import { AmazonWebServices, Docker, Git, MicrosoftAzure, Vite, WordPress } from 
 import './../styles/introduction.scss';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
+import './../styles/section_skills.scss';
 
 const Introduction = () => {
   return (
@@ -64,7 +65,7 @@ const Introduction = () => {
       <section className="skills" id="skills">
         <Layout>
           <div className="skills__container">
-          <h2 className="skills__title">Habilidades</h2>
+            <h2 className="skills__title">Habilidades</h2>
             <div className="skills__container--server">
               <h3 className="skills__subtitle">Servidor</h3>
               <ul className="skills__list">
@@ -155,7 +156,7 @@ const Introduction = () => {
             </div>
             <div className="skills__container--tools">
               <h3 className="skills__subtitle">Herramientas</h3>
-          <ul className="skills__list">
+              <ul className="skills__list">
                 <li className="skills__item skills__item--tool">
                   <picture>
                     <Git />
@@ -198,7 +199,7 @@ const Introduction = () => {
                     <figcaption>AWS</figcaption>
                   </picture>
                 </li>
-          </ul>
+              </ul>
             </div>
           </div>
         </Layout>
