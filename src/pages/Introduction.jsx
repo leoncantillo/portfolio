@@ -6,6 +6,7 @@ import './../styles/introduction.scss';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
+import './../styles/section_contact.scss';
 
 const Introduction = () => {
   return (
