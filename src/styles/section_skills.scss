@@ -1,0 +1,33 @@
+.skills__container {
+    display: grid;
+        gap: 40px;
+        grid-template-columns: auto auto;
+
+    .skills__title {
+        grid-column: span 2;
+    }
+
+    .skills__container--server,
+    .skills__container--client,
+    .skills__container--tools {
+        border: 1px white solid;
+        border-radius: 8px;
+        padding: 10px 20px;
+    }
+
+    .skills__container--tools { grid-column: span 2; }
+
+    .skills__list {
+        display: grid; 
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        list-style: none;
+        padding: 0;
+
+        .skills__item svg{
+            width: 60px;
+            height: 60px;
+            justify-self: center;
+        }
+    }
+}
