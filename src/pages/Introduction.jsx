@@ -21,10 +21,9 @@ const Introduction = () => {
       {/* <!-- HERO BANNER --> */}
       <section className="hero" id="hero">
         <Layout>
-
-          <h2 className="hero__professional-title">Software Developer</h2>
           <h1 className="hero__name">León Cantillo</h1>
-          <h4 className="hero__experience">+3 años de experiencia</h4>
+          <h2 className="hero__professional-title">Backend Software Developer</h2>
+          <p className="hero__experience">+{experienceYears - 1} años de experiencia • Especialista en arquitectura, APIs y lógica de negocio</p>
           <ul className="hero__networks">
             <li className="hero__networks-button hero__networks-button--download button">
               <a href="" target="_blank" rel="noopener noreferrer">
