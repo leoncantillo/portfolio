@@ -10,6 +10,7 @@ import './../styles/section_contact.scss';
 
 const Introduction = () => {
   const currentYear = new Date().getFullYear();
+  const experienceYears = currentYear - 2022;
 
   return (
     <div className="portfolio">
@@ -23,6 +24,7 @@ const Introduction = () => {
 
           <h2 className="hero__professional-title">Software Developer</h2>
           <h1 className="hero__name">León Cantillo</h1>
+          <h4 className="hero__experience">+3 años de experiencia</h4>
           <ul className="hero__networks">
             <li className="hero__networks-button hero__networks-button--download button">
               <a href="" target="_blank" rel="noopener noreferrer">
@@ -48,11 +50,11 @@ const Introduction = () => {
             <div className="about__info">
               <h2 className="about__title">Sobre mí</h2>
               <p className="about__description">
-                Soy desarrollador backend con una base sólida en frontend. Aunque puedo construir aplicaciones completas de extremo a extremo, mi mayor fortaleza y especialización se encuentran en el backend: arquitectura, lógica de negocio, APIs y manejo de datos. Trabajo el frontend con un conjunto específico de tecnologías que domino, suficientes para crear interfaces funcionales y bien integradas.
+                Soy desarrollador <b><i>backend</i></b> con <b>más de {experienceYears - 1} años de experiencia</b>. Aunque puedo construir aplicaciones completas de extremo a extremo, mi mayor fortaleza y especialización se encuentran en el backend: arquitectura, lógica de negocio, APIs y manejo de datos. Trabajo el <b><i>frontend</i></b> con un conjunto específico de tecnologías que domino, suficientes para crear interfaces funcionales y bien integradas.
                 <br /><br />
-                No me identifico plenamente con la etiqueta fullstack, ya que considero que no es realista abarcar todas las áreas con la misma profundidad. Prefiero definir mi perfil como un backend especializado con una visión integral del desarrollo.
+                No me identifico plenamente con la etiqueta <i>fullstack</i>, ya que considero que no es realista abarcar todas las áreas con la misma profundidad. Prefiero definir mi perfil como un backend especializado con una visión integral del desarrollo.
                 <br /><br />
-                Me gusta liderar equipos y he asumido el rol de arquitecto de software en distintos proyectos. Aunque no ostento ese título de forma oficial, mi comprensión completa del panorama técnico me permite tomar decisiones sólidas y coordinar de manera eficiente las distintas áreas de trabajo.
+                Me gusta liderar equipos y he asumido el rol de <b><i>arquitecto de software</i></b> en distintos proyectos. Aunque no ostento ese título de forma oficial, mi comprensión completa del panorama técnico me permite tomar decisiones sólidas y coordinar de manera eficiente las distintas áreas de trabajo.
               </p>
             </div>
             <div className="about__photo">
