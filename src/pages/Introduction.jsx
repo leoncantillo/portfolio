@@ -9,6 +9,8 @@ import './../styles/section_skills.scss';
 import './../styles/section_contact.scss';
 
 const Introduction = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="portfolio">
 
@@ -238,7 +240,7 @@ const Introduction = () => {
       {/* <!-- Footer --> */}
       <footer className="footer">
         <Layout>
-          <p className="footer__text">&copy; 2025 - Tu Nombre</p>
+          <p className="footer__text">&copy; {currentYear} - León Cantillo</p>
         </Layout>
       </footer>
 
