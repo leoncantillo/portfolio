@@ -42,37 +42,39 @@
         list-style: none;
         padding: 0;
 
-        .skills__item svg{
-            width: 60px;
-            height: 60px;
-            justify-self: center;
-            transition: transform .3s ease;
-        }
-
-        .skills__item figcaption {
-            display: none;
-            transition: transform .3s ease;
-            visibility: hidden;
-        }
-
-        .skills__item:hover{ 
-            svg {
-                transform: scale(1.2);
+        .skills__item {
+            svg{
+                width: 60px;
+                height: 60px;
+                justify-self: center;
+                transition: transform .3s ease;
             }
 
             figcaption {
-                background-color: var(--button-bg);
-                border: 1px var(--button-border-hover) solid;
-                border-radius: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-                display: block;
-                min-width: 60px;
-                padding: 5px 10px;
-                transform: translateX(-50%);
-                position: absolute;
-                    left: 50%;
-                z-index: 20;
-                visibility: visible;
+                display: none;
+                transition: transform .3s ease;
+                visibility: hidden;
+            }
+
+            &:hover{ 
+                svg {
+                    transform: scale(1.2);
+                }
+
+                figcaption {
+                    background-color: var(--button-bg);
+                    border: 1px var(--button-border-hover) solid;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+                    display: block;
+                    min-width: 60px;
+                    padding: 5px 10px;
+                    transform: translateX(-50%);
+                    position: absolute;
+                        left: 50%;
+                    z-index: 20;
+                    visibility: visible;
+                }
             }
         }
     }
