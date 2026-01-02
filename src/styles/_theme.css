@@ -1,0 +1,42 @@
+/* Modo oscuro (por defecto) */
+:root {
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-bg: #242424;
+  --color-bg-2: #1f1f1f;
+  --color-link: #646cff;
+  --color-link-hover: #535bf2;
+  --button-bg: #1a1a1a;
+  --button-border-hover: #646cff;
+  --input-border: #707070;
+  --card-border: #1a1a1a;
+
+  --palet-color-1: #2f5e43;
+  --palet-color-2: #fff480;
+
+}
+
+/* Modo claro por preferencia del sistema */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: #213547;
+    --color-bg: #ffffff;
+    --color-bg-2: #c7ecf7;
+    --color-link-hover: #747bff;
+    --button-bg: #46c27b;
+    --button-bg-2: #f9f9f9;
+    --input-border: #dbdbdb;
+    --card-border: #eee;
+  }
+}
+
+/* Modo claro forzado manualmente */
+html.light {
+  --color-text: #213547;
+  --color-bg: #ffffff;
+  --color-bg-2: #c7ecf7;
+  --color-link-hover: #747bff;
+  --button-bg: #46c27b;
+  --button-bg-2: #f9f9f9;
+  --input-border: #dbdbdb;
+  --card-border: #eee;
+}
