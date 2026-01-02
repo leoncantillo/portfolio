@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Layout from "../components/Layout";
 import { C, Cpp, Expressjs, Java, JavaScript, Kotlin, MySQL, Nodejs, Php, PostgreSQL, React, Spring, Threejs, TypeScript } from "../components/DevelopSkillLogos";
 import { AmazonWebServices, Docker, Git, MicrosoftAzure, Vite, WordPress } from "../components/DevelopToolLogos";
-import './../styles/introduction.scss';
+import './../styles/Introduction.scss';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
