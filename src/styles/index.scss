@@ -65,3 +65,13 @@ button, .button, .button-2 {
     outline: 4px auto -webkit-focus-ring-color;
   }
 }
+
+.button-2 {
+  background-color: var(--button-bg-2);
+}
+
+form {
+  input, textarea {
+    background-color: transparent;
+  }
+}
