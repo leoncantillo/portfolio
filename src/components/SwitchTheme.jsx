@@ -2,12 +2,12 @@ import { useTheme } from '../context/ThemeContext';
 import './../styles/SwitchTheme.scss';
 
 const SwitchTheme = () => {
-    const { toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
     return (
         // From Uiverse.io by RiccardoRapelli
         <label className="switch-theme">
-            <input id="input" type="checkbox" defaultChecked="darkTheme" onChange={toggleTheme}/>
+            <input id="input" type="checkbox" checked={theme === "dark"} onChange={toggleTheme}/>
             <div className="slider round">
                 <div className="sun-moon">
                     <svg id="moon-dot-1" className="moon-dot" viewBox="0 0 100 100">
