@@ -1,15 +1,15 @@
+@use './tokens' as *;
+
 .contact__form {
     display: grid;
         gap: 20px;
         grid-template-columns: auto auto auto;
     padding-top: 40px; 
 
-    --input-border-color: #707070;
-
         .contact__input,
         .contact__textarea {
-            border: 2px var(--input-border-color) solid;
-            border-radius: var(--global-minor-radius);
+            border: 2px var(--input-border) solid;
+            border-radius: $global-minor-radius;
             padding: 10px;
 
             &:focus-visible {

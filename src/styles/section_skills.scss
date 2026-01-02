@@ -1,3 +1,5 @@
+@use './tokens' as *;
+
 .skills__container {
     display: grid;
         gap: 40px;
@@ -10,8 +12,8 @@
     .skills__container--server,
     .skills__container--client,
     .skills__container--tools {
-        border: 2px var(--button-border-dark) solid;
-        border-radius: var(--global-major-radius);
+        border: 2px var(--card-border) solid;
+        border-radius: $global-major-radius;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
         padding: 10px 20px;
         transition: transform .3s ease;
@@ -60,7 +62,7 @@
 
             figcaption {
                 background-color: var(--button-bg);
-                border: 1px var(--button-border-dark) solid;
+                border: 1px var(--button-border-hover) solid;
                 border-radius: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
                 display: block;
