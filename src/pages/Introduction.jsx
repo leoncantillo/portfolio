@@ -25,16 +25,16 @@ const Introduction = () => {
           <h2 className="hero__professional-title">Backend Software Developer</h2>
           <p className="hero__experience">+{experienceYears - 1} años de experiencia • Especialista en arquitectura, APIs y lógica de negocio</p>
           <ul className="hero__networks">
-            <li className="hero__networks-button hero__networks-button--download button">
-              <a href="" target="_blank" rel="noopener noreferrer">
+            <li>
+              <a className="hero__networks-button hero__networks-button--download button" href="" target="_blank" rel="noopener noreferrer">
                 <i className="fa-solid fa-download"></i> Descargar CV</a>
             </li>
-            <li className="hero__networks-button hero__networks-button--linkedin button">
-              <a href="https://www.linkedin.com/in/leoncantillo/" target="_blank" rel="noopener noreferrer">
+            <li>
+              <a className="hero__networks-button hero__networks-button--linkedin button-2" href="https://www.linkedin.com/in/leoncantillo/" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-linkedin-in"></i> LinkedIn</a>
             </li>
-            <li className="hero__networks-button hero__networks-button--github button">
-              <a href="https://github.com/leoncantillo/" target="_blank" rel="noopener noreferrer">
+            <li>
+              <a className="hero__networks-button hero__networks-button--github button" href="https://github.com/leoncantillo/" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-github"></i> Github</a>
             </li>
           </ul>
@@ -70,7 +70,7 @@ const Introduction = () => {
         <Layout>
           <div className="skills__container">
             <h2 className="skills__title">Habilidades</h2>
-            <div className="skills__container--server">
+            <div className="skills__card skills__card--server">
               <h3 className="skills__subtitle">Servidor</h3>
               <ul className="skills__list">
                 <li className="skills__item">
@@ -135,7 +135,7 @@ const Introduction = () => {
                 </li>
               </ul>
             </div>
-            <div className="skills__container--client">
+            <div className="skills__card skills__card--client">
               <h3 className="skills__subtitle">Cliente</h3>
               <ul className="skills__list">
                 <li className="skills__item">
@@ -158,7 +158,7 @@ const Introduction = () => {
                 </li>
               </ul>
             </div>
-            <div className="skills__container--tools">
+            <div className="skills__card skills__card--tools">
               <h3 className="skills__subtitle">Herramientas</h3>
               <ul className="skills__list">
                 <li className="skills__item skills__item--tool">
