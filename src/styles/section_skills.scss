@@ -9,9 +9,9 @@
         grid-column: span 2;
     }
 
-    .skills__container--server,
-    .skills__container--client,
-    .skills__container--tools {
+    .skills__card--server,
+    .skills__card--client,
+    .skills__card--tools {
         border: 2px var(--card-border) solid;
         border-radius: $global-major-radius;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
@@ -33,7 +33,7 @@
         }
     }
 
-    .skills__container--tools { grid-column: span 2; }
+    .skills__card--tools { grid-column: span 2; }
 
     .skills__list {
         display: grid; 
