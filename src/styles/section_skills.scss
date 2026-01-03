@@ -37,7 +37,7 @@
 
     .skills__list {
         display: grid; 
-            gap: 20px;
+            gap: 40px;
             grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
         list-style: none;
         padding: 0;
@@ -76,6 +76,30 @@
                     visibility: visible;
                 }
             }
+        }
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .skills__container {
+        .skills__list {
+                gap: 20px;
+                grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            
+            .skills__item svg{
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+}
+
+/* Móvil */
+@media (max-width: 580px) {
+    .skills__container {
+        .skills__card {
+            grid-column: span 2;
         }
     }
 }

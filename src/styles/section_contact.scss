@@ -27,3 +27,18 @@
             grid-row: 1;
         }
 }
+
+@media (max-width: 768px) {
+    .contact__form {
+        .contact__input,
+        .contact__textarea,
+        .contact__button {
+            grid-column: 1 / span 3;
+        }
+
+        .contact__button {
+            grid-column-end: 2;
+            grid-row: 4;
+        }
+    }
+}
