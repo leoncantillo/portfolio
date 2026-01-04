@@ -1,8 +1,6 @@
-import Header from "../components/Header";
-import Layout from "../components/Layout";
-import { C, Cpp, Expressjs, Java, JavaScript, Kotlin, MySQL, Nodejs, Php, PostgreSQL, React, Spring, Threejs, TypeScript } from "../components/DevelopSkillLogos";
-import { AmazonWebServices, Docker, Git, MicrosoftAzure, Vite, WordPress } from "../components/DevelopToolLogos";
-import './../styles/Introduction.scss';
+import Header from '../components/Header';
+import Layout from '../components/Layout';
+import Skills from '../sections/Skills';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
@@ -19,195 +17,50 @@ const Introduction = () => {
       <Header />
 
       {/* <!-- HERO BANNER --> */}
-      <section className="hero" id="hero">
-        <Layout>
-          <h1 className="hero__name">León Cantillo</h1>
-          <h2 className="hero__professional-title">Backend Software Developer</h2>
-          <p className="hero__experience">+{experienceYears - 1} años de experiencia • Especialista en arquitectura, APIs y lógica de negocio</p>
-          <ul className="hero__networks">
-            <li>
-              <a className="hero__networks-button hero__networks-button--download button" href="" target="_blank" rel="noopener noreferrer">
-                <i className="fa-solid fa-download"></i> Descargar CV</a>
-            </li>
-            <li>
-              <a className="hero__networks-button hero__networks-button--linkedin button-2" href="https://www.linkedin.com/in/leoncantillo/" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-            </li>
-            <li>
-              <a className="hero__networks-button hero__networks-button--github button" href="https://github.com/leoncantillo/" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-github"></i> Github</a>
-            </li>
-          </ul>
-        </Layout>
+      <Layout className="hero" id="hero">
+        <h1 className="hero__name">León Cantillo</h1>
+        <h2 className="hero__professional-title">Backend Software Developer</h2>
+        <p className="hero__experience">+{experienceYears - 1} años de experiencia • Especialista en arquitectura, APIs y lógica de negocio</p>
+        <ul className="hero__networks">
+          <li>
+            <a className="hero__networks-button hero__networks-button--download button" href="" target="_blank" rel="noopener noreferrer">
+              <i className="fa-solid fa-download"></i> Descargar CV</a>
+          </li>
+          <li>
+            <a className="hero__networks-button hero__networks-button--linkedin button-2" href="https://www.linkedin.com/in/leoncantillo/" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </li>
+          <li>
+            <a className="hero__networks-button hero__networks-button--github button" href="https://github.com/leoncantillo/" target="_blank" rel="noopener noreferrer">
+              <i className="fa-brands fa-github"></i> Github</a>
+          </li>
+        </ul>
+      </Layout>
 
-      </section>
 
       {/* <!-- About --> */}
-      <section className="about" id="about">
-        <Layout>
-          <div className="about__container">
-            <div className="about__info">
-              <h2 className="about__title">Sobre mí</h2>
-              <p className="about__description">
-                Soy desarrollador <b><i>backend</i></b> con <b>más de {experienceYears - 1} años de experiencia</b>. Aunque puedo construir aplicaciones completas de extremo a extremo, mi mayor fortaleza y especialización se encuentran en el backend: arquitectura, lógica de negocio, APIs y manejo de datos. Trabajo el <b><i>frontend</i></b> con un conjunto específico de tecnologías que domino, suficientes para crear interfaces funcionales y bien integradas.
-                <br /><br />
-                No me identifico plenamente con la etiqueta <i>fullstack</i>, ya que considero que no es realista abarcar todas las áreas con la misma profundidad. Prefiero definir mi perfil como un backend especializado con una visión integral del desarrollo.
-                <br /><br />
-                Me gusta liderar equipos y he asumido el rol de <b><i>arquitecto de software</i></b> en distintos proyectos. Aunque no ostento ese título de forma oficial, mi comprensión completa del panorama técnico me permite tomar decisiones sólidas y coordinar de manera eficiente las distintas áreas de trabajo.
-              </p>
-            </div>
-            <div className="about__photo">
-              <figure>
-                <img src="./profile-photo.jpeg" alt="" />
-              </figure>
-            </div>
+      <Layout className="about" id="about">
+        <div className="about__container">
+          <div className="about__info">
+            <h2 className="about__title">Sobre mí</h2>
+            <p className="about__description">
+              Soy desarrollador <b><i>backend</i></b> con <b>más de {experienceYears - 1} años de experiencia</b>. Aunque puedo construir aplicaciones completas de extremo a extremo, mi mayor fortaleza y especialización se encuentran en el backend: arquitectura, lógica de negocio, APIs y manejo de datos. Trabajo el <b><i>frontend</i></b> con un conjunto específico de tecnologías que domino, suficientes para crear interfaces funcionales y bien integradas.
+              <br /><br />
+              No me identifico plenamente con la etiqueta <i>fullstack</i>, ya que considero que no es realista abarcar todas las áreas con la misma profundidad. Prefiero definir mi perfil como un backend especializado con una visión integral del desarrollo.
+              <br /><br />
+              Me gusta liderar equipos y he asumido el rol de <b><i>arquitecto de software</i></b> en distintos proyectos. Aunque no ostento ese título de forma oficial, mi comprensión completa del panorama técnico me permite tomar decisiones sólidas y coordinar de manera eficiente las distintas áreas de trabajo.
+            </p>
           </div>
-        </Layout>
-      </section>
+          <div className="about__photo">
+            <figure>
+              <img src="./profile-photo.jpeg" alt="" />
+            </figure>
+          </div>
+        </div>
+      </Layout>
 
       {/* <!-- Skills --> */}
-      <section className="skills" id="skills">
-        <Layout>
-          <div className="skills__container">
-            <h2 className="skills__title">Habilidades</h2>
-            <div className="skills__card skills__card--server">
-              <h3 className="skills__subtitle">Servidor</h3>
-              <ul className="skills__list">
-                <li className="skills__item">
-                  <picture>
-                    <C />
-                    <figcaption>C</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Cpp />
-                    <figcaption>C++</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Java />
-                    <figcaption>Java</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Kotlin />
-                    <figcaption>Kotlin</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Spring />
-                    <figcaption>Spring</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <TypeScript />
-                    <figcaption>TypeScript</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Expressjs />
-                    <figcaption>ExpressJs</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <MySQL />
-                    <figcaption>MySQL</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <PostgreSQL />
-                    <figcaption>PostgreSQL</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Php />
-                    <figcaption>PHP</figcaption>
-                  </picture>
-                </li>
-              </ul>
-            </div>
-            <div className="skills__card skills__card--client">
-              <h3 className="skills__subtitle">Cliente</h3>
-              <ul className="skills__list">
-                <li className="skills__item">
-                  <picture>
-                    <JavaScript />
-                    <figcaption>JavaScript</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item react">
-                  <picture>
-                    <React />
-                    <figcaption>React</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item">
-                  <picture>
-                    <Threejs />
-                    <figcaption>ThreeJs</figcaption>
-                  </picture>
-                </li>
-              </ul>
-            </div>
-            <div className="skills__card skills__card--tools">
-              <h3 className="skills__subtitle">Herramientas</h3>
-              <ul className="skills__list">
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <Git />
-                    <figcaption>Git</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <Docker />
-                    <figcaption>Docker</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <Nodejs />
-                    <figcaption>NodeJs</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <Vite />
-                    <figcaption>Vite</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <WordPress />
-                    <figcaption>Wordpress</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <MicrosoftAzure />
-                    <figcaption>Microsoft Azure</figcaption>
-                  </picture>
-                </li>
-                <li className="skills__item skills__item--tool">
-                  <picture>
-                    <AmazonWebServices />
-                    <figcaption>AWS</figcaption>
-                  </picture>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Layout>
-      </section>
+      <Skills />
 
       {/* <!-- Projects --> */}
       <section className="projects" id="projects">
@@ -226,25 +79,20 @@ const Introduction = () => {
       </section>
 
       {/* <!-- Contact --> */}
-      <section className="contact" id="contact">
-        <Layout>
-          <h2 className="contact__title">Contáctame</h2>
-          <form className="contact__form">
-            <input className="contact__input" type="text" placeholder="Tu nombre" />
-            <input className="contact__input" required type="email" placeholder="Tu email *" />
-            <textarea className="contact__textarea" required placeholder="Tu mensaje *"></textarea>
-            <button className="contact__button" type="submit">Enviar</button>
-          </form>
-        </Layout>
-      </section>
+      <Layout className="contact" id="contact">
+        <h2 className="contact__title">Contáctame</h2>
+        <form className="contact__form">
+          <input className="contact__input" type="text" placeholder="Tu nombre" />
+          <input className="contact__input" required type="email" placeholder="Tu email *" />
+          <textarea className="contact__textarea" required placeholder="Tu mensaje *"></textarea>
+          <button className="contact__button" type="submit">Enviar</button>
+        </form>
+      </Layout>
 
       {/* <!-- Footer --> */}
-      <footer className="footer">
-        <Layout>
+        <Layout as='footer'>
           <p className="footer__text">&copy; {currentYear} - León Cantillo</p>
         </Layout>
-      </footer>
-
     </div>
 
   );
