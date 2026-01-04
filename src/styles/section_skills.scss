@@ -50,7 +50,7 @@
                 transition: transform .3s ease;
             }
 
-            figcaption {
+            .skills__label {
                 display: none;
                 transition: transform .3s ease;
                 visibility: hidden;
@@ -61,7 +61,7 @@
                     transform: scale(1.2);
                 }
 
-                figcaption {
+                .skills__label {
                     background-color: var(--button-bg);
                     border: 1px var(--button-border-hover) solid;
                     border-radius: 20px;
