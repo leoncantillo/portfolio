@@ -1,11 +1,17 @@
 import '../styles/Layout.scss';
 
-function Layout({ children }) {
+function Layout({
+  children,
+  className = "",
+  id,
+  as: Component = "section",
+}) {
   return (
-    <div className="page-container">
+    <Component id={id} className={`section-layout ${className}`}>
       {children}
-    </div>
+    </Component>
   );
 }
 
 export default Layout;
+
