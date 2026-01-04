@@ -1,16 +1,16 @@
 header {
+    backdrop-filter: blur(40px);
     position: sticky;
         top: 0;
-    backdrop-filter: blur(40px);
-
     z-index: 1000;
+
+&.section-layout { padding-block: 10px; }
 
 .header {
     display: flex;
         align-items: center;
         flex-wrap: wrap-reverse;
         justify-content: space-between;
-    padding: 10px 0;
 
     .profile-card {
         display: flex;
