@@ -7,8 +7,10 @@ function Layout({
   as: Component = "section",
 }) {
   return (
-    <Component id={id} className={`section-layout ${className}`}>
-      {children}
+    <Component id={id}>
+      <div className={`section-layout ${className}`}>
+        {children}
+      </div>
     </Component>
   );
 }
