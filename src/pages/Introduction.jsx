@@ -5,6 +5,7 @@ import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
 import './../styles/section_contact.scss';
+import './../styles/Footer.scss';
 
 const Introduction = () => {
   const currentYear = new Date().getFullYear();
