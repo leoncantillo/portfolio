@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import Skills from '../sections/Skills';
+import Projects from '../sections/Projects';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
@@ -64,20 +65,7 @@ const Introduction = () => {
       <Skills />
 
       {/* <!-- Projects --> */}
-      <section className="projects" id="projects">
-        <Layout>
-          <h2 className="projects__title">Proyectos</h2>
-          <div className="projects__grid">
-            <div className="projects__card">
-              <img className="projects__image" src="project1.png" alt="Project 1" />
-              <h3 className="projects__name">Mi Tienda Virtual</h3>
-              <p className="projects__description">E-commerce con React, Express y PostgreSQL.</p>
-              <a className="projects__link" href="#">Ver más</a>
-            </div>
-            {/* <!-- Más tarjetas... --> */}
-          </div>
-        </Layout>
-      </section>
+      <Projects />
 
       {/* <!-- Contact --> */}
       <Layout className="contact" id="contact">
