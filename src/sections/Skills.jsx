@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import SkillCard from "../components/SkillCard";
-import { skillsData } from "../assets/skills.data";
+import { skillsData } from "../portfolio-data/skills.data";
 
 const Skills = () => {
   return (
