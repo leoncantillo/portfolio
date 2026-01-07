@@ -6,7 +6,9 @@ import '../styles/section_projects.scss';
 
 const Projects = () => {
   return (
-    <Layout className="projects">
+    <Layout id="projects" className="projects">
+      <h2 className="projects__title">Projects</h2>
+      
       {projects.map((project) => (
         <ProjectCard
           key={project.id}
