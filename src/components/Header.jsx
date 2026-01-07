@@ -15,8 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <Layout as="header">
-        <div className="header">
+      <Layout as="header" containerClasses="header">
           <div className="profile-card">
             <figure className="profile-card__photo">
               <img src="./profile-photo.jpeg" alt="profile-photo" />
@@ -43,7 +42,6 @@ const Header = () => {
               <li className="navbar__item"><a href="#contact" className="navbar__link">Contacto</a></li>
             </ul>
           </nav>
-        </div>
       </Layout>
       {menuState === "opened" && <span className="underlay" onClick={closeMenu}></span>}
     </>
