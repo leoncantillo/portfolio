@@ -4,6 +4,12 @@ const ProjectCard = ({ project }) => {
   return (
     <article className="project-card">
       <header className="project-card__header">
+        <picture>
+          <img
+            src={project.src_featured_img}
+            alt={`Featured image of the ${project.title} project.`}
+          />
+        </picture>
         <h3 className="project-card__title">
           {project.title}
         </h3>
