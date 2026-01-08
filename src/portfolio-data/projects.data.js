@@ -19,6 +19,6 @@ export const projects = [
     ],
     impact:
       "Arquitectura escalable y backend preparado para crecimiento del producto.",
-    slug: "/projects/student-housing-platform",
+    slug: "student-housing-platform",
   },
 ];
