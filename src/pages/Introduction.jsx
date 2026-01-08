@@ -42,7 +42,6 @@ const Introduction = () => {
 
       {/* <!-- About --> */}
       <Layout className="about" id="about">
-        <div className="about__container">
           <div className="about__info">
             <h2 className="about__title">Sobre mí</h2>
             <p className="about__description">
@@ -54,11 +53,10 @@ const Introduction = () => {
             </p>
           </div>
           <div className="about__photo">
-            <figure>
-              <img src="./profile-photo.jpeg" alt="" />
-            </figure>
+            <picture>
+              <img src="./profile-photo.jpeg" alt="profile-photo" />
+            </picture>
           </div>
-        </div>
       </Layout>
 
       {/* <!-- Skills --> */}
