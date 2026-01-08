@@ -1,4 +1,4 @@
-import SkillItem from "./SkillItem";
+import TechItem from "./TechItem";
 
 const SkillCard = ({ title, modifier, skills }) => {
   const classModifier = `skills__card--${modifier}`;
@@ -7,12 +7,13 @@ const SkillCard = ({ title, modifier, skills }) => {
       <h3 className="skills__subtitle">{title}</h3>
       <ul className="skills__list">
         {skills.map(({ icon, label, className }) => (
-          <SkillItem
-            key={label}
-            icon={icon}
-            label={label}
-            className={className}
-          />
+          <li key={label}>
+            <TechItem
+              icon={icon}
+              label={label}
+              className={className}
+            />
+          </li>
         ))}
       </ul>
     </div>
