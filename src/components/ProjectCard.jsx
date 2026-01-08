@@ -1,3 +1,4 @@
+import TechItem from './TechItem';
 
 const ProjectCard = ({ project }) => {
   return (
@@ -17,24 +18,17 @@ const ProjectCard = ({ project }) => {
       </section>
 
       <section className="project-card__tech">
-        <ul>
-          {project.tech.map((tech) => (
-            <li key={tech}>{tech}</li>
+        <ul className="project-card__list">
+          {project.tech.map(({ icon, label, className }) => (
+            <li key={label}>
+              <TechItem
+                icon={icon}
+                label={label}
+                className={className}
+              />
+            </li>
           ))}
         </ul>
-      </section>
-
-      <section className="project-card__challenges">
-        <ul>
-          {project.challenges.slice(0, 2).map((challenge, index) => (
-            <li key={index}>{challenge}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="project-card__impact">
-        <strong>Impacto:</strong>
-        <span> {project.impact}</span>
       </section>
 
       <footer className="project-card__actions">
