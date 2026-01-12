@@ -54,6 +54,8 @@ header:has(.header) {
 
             a { color: var(--color-text); }
 
+            a[href="#projects"] { color: var(--color-link); }
+
             a:hover { color: var(--color-link-hover); }
 
             &:active {
