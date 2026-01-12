@@ -6,6 +6,7 @@ const ProjectCard = ({ project }) => {
       <header className="project-card__header">
         <picture>
           <img
+            className='featured-photo'
             src={project.src_featured_img}
             alt={`Featured image of the ${project.title} project.`}
           />
