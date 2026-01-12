@@ -12,9 +12,8 @@
     .skills__card--server,
     .skills__card--client,
     .skills__card--tools {
-        border: 2px var(--card-border) solid;
         border-radius: $global-major-radius;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        box-shadow: $global-shadow-block;
         padding: 10px 20px;
         transition: transform .3s ease;
 
