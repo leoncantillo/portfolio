@@ -5,11 +5,14 @@ function Layout({
   className = "",
   id,
   as: Component = "section",
+  containerClasses = "",
 }) {
   return (
-    <Component id={id}>
-      <div className={`section-layout ${className}`}>
-        {children}
+    <Component id={id} className={className}>
+      <div className="section-layout">
+        <div className={`${id ? id + "__" : ""}container ${containerClasses}`}>
+          {children}
+        </div>
       </div>
     </Component>
   );

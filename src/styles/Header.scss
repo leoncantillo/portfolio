@@ -17,15 +17,11 @@ header:has(.header) {
         align-items: center;
         gap: 10px;
 
-        .profile-card__photo {
-            margin: 0;
-
-            img {
-                height: 60px;
-                width: 60px;
-                border-radius: 50px;
-                object-fit: cover;
-            }
+        img[alt=profile-photo] {
+            height: 60px;
+            width: 60px;
+            border-radius: 50px;
+            object-fit: cover;
         }
 
         .profile-card__info {

@@ -5,18 +5,16 @@ import { skillsData } from "../portfolio-data/skills.data";
 const Skills = () => {
   return (
     <Layout id="skills" className="skills">
-      <div className="skills__container">
-        <h2 className="skills__title">Habilidades</h2>
+      <h2 className="skills__title">Habilidades</h2>
 
-        {skillsData.map(({ title, modifier, skills }) => (
-          <SkillCard
-            key={modifier}
-            title={title}
-            modifier={modifier}
-            skills={skills}
-          />
-        ))}
-      </div>
+      {skillsData.map(({ title, modifier, skills }) => (
+        <SkillCard
+          key={modifier}
+          title={title}
+          modifier={modifier}
+          skills={skills}
+        />
+      ))}
     </Layout>
   );
 };
