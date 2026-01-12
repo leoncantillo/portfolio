@@ -1,13 +1,25 @@
+@use './tokens' as *;
+
 .tech__item {
+    position: relative;
     svg {
         width: 60px;
         height: 60px;
-        justify-self: center;
         transition: transform .3s ease;
     }
 
     .tech__label {
+        background-color: var(--button-bg);
+        border: 1px var(--button-border-hover) solid;
+        border-radius: 20px;
+        box-shadow: $global-shadow-block;
         display: none;
+        min-width: 60px;
+        padding: 5px 10px;
+        transform: translateX(-50%);
+        position: absolute;
+            left: 50%;
+        z-index: 20;
         transition: transform .3s ease;
         visibility: hidden;
     }
@@ -18,17 +30,7 @@
         }
 
         .tech__label {
-            background-color: var(--button-bg);
-            border: 1px var(--button-border-hover) solid;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             display: block;
-            min-width: 60px;
-            padding: 5px 10px;
-            transform: translateX(-50%);
-            position: absolute;
-                left: 50%;
-            z-index: 20;
             visibility: visible;
         }
     }
