@@ -1,8 +1,9 @@
+import CurvedScrollbar from './CurvedScrollbar';
 import TechItem from './TechItem';
 
 const ProjectCard = ({ project }) => {
   return (
-    <article className="project-card">
+    <CurvedScrollbar as="article" className="project-card">
       <header className="project-card__header">
         <picture>
           <img
@@ -43,7 +44,7 @@ const ProjectCard = ({ project }) => {
           Ver más
         </a>
       </footer>
-    </article>
+    </CurvedScrollbar>
   );
 };
 
