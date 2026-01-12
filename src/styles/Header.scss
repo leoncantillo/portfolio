@@ -54,6 +54,8 @@ header:has(.header) {
 
             a { color: var(--color-text); }
 
+            a[href="#projects"] { color: var(--color-link); }
+
             a:hover { color: var(--color-link-hover); }
 
             &:active {
@@ -136,7 +138,7 @@ header:has(.header) {
 }
 
 @media (max-width: 500px) {
-    header .header {
+    header:has(.header) .header {
         gap: 10px;
         flex-wrap: wrap;
 
@@ -146,7 +148,7 @@ header:has(.header) {
             
         .navbar {
             background-color: var(--color-bg);
-            border-top: 4px var(--palet-color-1) solid;
+            border-top: 4px var(--palet-color-2) solid;
             max-height: 4px;
             overflow: hidden;
             text-align: left;
