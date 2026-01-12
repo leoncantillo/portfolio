@@ -1,8 +1,8 @@
 .tech__item {
+    position: relative;
     svg {
         width: 60px;
         height: 60px;
-        justify-self: center;
         transition: transform .3s ease;
     }
 
