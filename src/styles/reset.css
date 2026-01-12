@@ -1,12 +1,10 @@
 
 /* 1. Box sizing rules */
-/* 2. Position basen on imediate parent */
 /* 3. Prevent grid and flex items from spilling out of their container */
 *,
 *::before,
 *::after {
   box-sizing: border-box; /* 1 */
-  position: relative; /* 2 */
   min-height: 0; /* 3 */
 }
 
