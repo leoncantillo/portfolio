@@ -1,0 +1,43 @@
+.tech__item {
+    svg {
+        width: 60px;
+        height: 60px;
+        justify-self: center;
+        transition: transform .3s ease;
+    }
+
+    .tech__label {
+        display: none;
+        transition: transform .3s ease;
+        visibility: hidden;
+    }
+
+    &:hover {
+        svg {
+            transform: scale(1.2);
+        }
+
+        .tech__label {
+            background-color: var(--button-bg);
+            border: 1px var(--button-border-hover) solid;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            display: block;
+            min-width: 60px;
+            padding: 5px 10px;
+            transform: translateX(-50%);
+            position: absolute;
+                left: 50%;
+            z-index: 20;
+            visibility: visible;
+        }
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {            
+    .skills__item svg{
+        height: 40px;
+        width: 40px;
+    }
+}
