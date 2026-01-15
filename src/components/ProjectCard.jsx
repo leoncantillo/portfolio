@@ -17,13 +17,13 @@ const ProjectCard = ({ project }) => {
         </h3>
 
         <p className="project-card__description">
-          {project.description}
+          {project.brief_description}
+        </p>
+
+        <p className="project-card__role">
+          {project.role}
         </p>
       </header>
-
-      <section className="project-card__role">
-        <span>{project.role}</span>
-      </section>
 
       <section className="project-card__tech">
         <ul className="project-card__list">
