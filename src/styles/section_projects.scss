@@ -21,10 +21,9 @@
         box-shadow: $global-shadow-block;
         transition: transform .3s ease;
 
-        .project-card__title,
-        .project-card__description,
-        .scroll-content section,
-        .scroll-content footer { padding: 0 20px; }
+        section,
+        .project-card__header > *:not(picture),
+        .project-card__actions > * { padding: 0 20px; }
 
         .project-card__header {
             
