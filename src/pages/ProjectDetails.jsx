@@ -2,6 +2,7 @@ import { projects } from "../portfolio-data/projects.data";
 import { Link, useParams } from "react-router-dom";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
+import '../styles/ProjectDetails.scss';
 
 const ProjectDetails = () => {
   const { slug } = useParams();
