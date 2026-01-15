@@ -1,6 +1,46 @@
+@use './tokens' as *;
 
 .project-details {
-    .section-layout { max-width: 600px; }
+    $featured-img-major-border: 50px;
+    $featured-img-minor-border: 10px;
+    
+    .section-layout {
+        padding-top: 0;
+        max-width: 600px;
+    }
+
+    input[name=show-featured-image] { display: none; }
+
+    .glitch-wrapper {
+        border-bottom-left-radius: $featured-img-major-border;
+        border-bottom-right-radius: $featured-img-major-border;
+        cursor: pointer;
+        max-height: 100px;
+        overflow: hidden;
+        transition: border-radius 0.4s ease,
+                    margin-top .3s ease,
+                    max-height .3s ease-out,
+                    transform .3s ease;
+
+        .featured-photo {
+            object-fit: cover;
+            transition: transform .3s ease;
+            width: 100%;
+        }
+
+        &:hover {
+            box-shadow: $global-shadow-block;
+            transform: scale(1.02);
+        }
+    }
+
+    input[name=show-featured-image]:checked + label .glitch-wrapper {
+        border-radius: $featured-img-minor-border;
+        box-shadow: $global-shadow-block;
+        margin-top: 20px;
+        max-height: 1000px;
+        transform: scale(1.02);
+    }
 
     .project-details__role {
         color: var(--palet-color-1);
