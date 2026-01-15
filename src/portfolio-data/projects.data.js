@@ -2,11 +2,16 @@ import * as TechLogos from '../assets/TechLogos';
 
 export const projects = [
   {
-    id: "student-housing-platform",
+    id: 1,
+    slug: "student-housing-platform",
+    src_featured_img: "/Screenshot from 2026-01-15 07-45-00.png",
     title: "Plataforma de residencias estudiantiles",
-    description:
+    brief_description:
+      "Sistema para conectar estudiantes y propietarios, gestionando servicios incluidos y alianzas de vivienda.",
+    complete_description:
       "Sistema para conectar estudiantes y propietarios, gestionando servicios incluidos y alianzas de vivienda.",
     role: "Backend Developer · Líder técnico",
+    architecture: "Monolítica en capas",
     tech: [
       { icon: TechLogos.Java, label: "Java" },
       { icon: TechLogos.Spring, label: "Spring Boot" },
@@ -19,7 +24,11 @@ export const projects = [
     ],
     impact:
       "Arquitectura escalable y backend preparado para crecimiento del producto.",
-    slug: "student-housing-platform",
-    src_featured_img: "./random-image-001.avif",
+    learnings: [
+      "Arquitectura monolítica",
+      "Patrón de diseño en capas",
+    ],
+    repository: "#",
+    demo: "#",
   },
 ];
