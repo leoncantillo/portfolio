@@ -39,7 +39,8 @@ const ProjectDetails = () => {
     <Layout as='article' className="project-details">
       {/* Header */}
       <header className="project-details__header">
-
+        <input type="checkbox" name="show-featured-image" id="show-featured-image" />
+        <label htmlFor="show-featured-image">
         <picture className="glitch-wrapper">
           <source srcSet={project.src_featured_img} />
 
@@ -50,6 +51,7 @@ const ProjectDetails = () => {
           />
 
         </picture>
+        </label>
 
         <h1>{project.title}</h1>
         <p>{project.complete_description}</p>
