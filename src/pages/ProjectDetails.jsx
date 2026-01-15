@@ -12,8 +12,9 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <section>
-        <h2>Proyecto no encontrado</h2>
+      <section className="project-404">
+        <h2>404 Proyecto no encontrado</h2>
+        <p>Volver a la página principal</p>
       </section>
     );
   }
