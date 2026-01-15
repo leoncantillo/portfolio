@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
+import '../styles/Introduction.scss';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
