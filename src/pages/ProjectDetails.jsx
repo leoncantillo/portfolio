@@ -1,5 +1,5 @@
 import { projects } from "../portfolio-data/projects.data";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
 
@@ -18,6 +18,21 @@ const ProjectDetails = () => {
       </section>
     );
   }
+
+  const currentIndex = projects.findIndex(
+    (p) => p.id === project.id
+  );
+
+  const prevProject =
+    project.id > 1 && currentIndex > 0
+      ? projects[currentIndex - 1]
+      : null;
+
+  const nextProject =
+    currentIndex < projects.length - 1
+      ? projects[currentIndex + 1]
+      : null;
+
 
   return (
     <Layout as='article' className="project-details">
@@ -131,6 +146,24 @@ const ProjectDetails = () => {
               </li>
             )}
           </ul>
+
+          <nav className="project-details__pagination">
+            {prevProject && (
+              <Link
+                to={`/projects/${prevProject.slug}`}
+              >
+                ← Proyecto anterior
+              </Link>
+            )}
+
+            {nextProject && (
+              <Link
+                to={`/projects/${nextProject.slug}`}
+              >
+                Proyecto siguiente →
+              </Link>
+            )}
+          </nav>
         </footer>
       )}
     </Layout>
