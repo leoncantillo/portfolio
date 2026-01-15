@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectDetails from './pages/ProjectDetails';
 import SwitchTheme from './components/SwitchTheme';
 import Introduction from './pages/Introduction';
 
@@ -12,6 +13,12 @@ function App() {
     <>
       <Introduction />
       <SwitchTheme />
+            </>
+          } />
+          <Route path="projects/:slug" element={
+            <>
+              <ProjectDetails />
+              <SwitchTheme />
             </>
           } />
         </Routes>

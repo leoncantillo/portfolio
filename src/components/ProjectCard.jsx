@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CurvedScrollbar from './CurvedScrollbar';
 import TechItem from './TechItem';
 
@@ -40,9 +41,9 @@ const ProjectCard = ({ project }) => {
       </section>
 
       <footer className="project-card__actions">
-        <a href={project.slug}>
+        <Link to={`/projects/${project.slug}`}>
           Ver más
-        </a>
+        </Link>
       </footer>
     </CurvedScrollbar>
   );
