@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import drawImageCover from "../assets/drawImageCover";
-import '../styles/PixelGlitchImage.scss';
 
 export default function PixelGlitchImage({
   imgRef,
