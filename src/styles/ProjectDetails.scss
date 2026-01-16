@@ -38,7 +38,6 @@
 
         &:hover {
             box-shadow: $global-shadow-block;
-            transform: scale(1.02);
             
             .glitch-canvas { opacity: 0; }
         }
@@ -56,7 +55,6 @@
         box-shadow: $global-shadow-block;
         margin-top: 20px;
         max-height: 1000px;
-        transform: scale(1.02);
 
         .glitch-canvas { opacity: 0; }
         .expand-image__button--expand { visibility: visible; }
