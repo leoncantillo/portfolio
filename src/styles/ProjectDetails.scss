@@ -18,17 +18,21 @@
         cursor: pointer;
         max-height: 100px;
         overflow: hidden;
+        position: relative;
         transition: border-radius 0.4s ease,
                     margin-top .3s ease,
                     max-height .3s ease-out,
                     transform .3s ease;
 
         .featured-photo {
+            object-fit: cover;
             width: 100%;
         }
 
         .glitch-canvas {
             opacity: 1;
+            position: absolute;
+                inset: 0;
             transition: opacity .3s ease;
         }
 
