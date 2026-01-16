@@ -12,6 +12,7 @@
     input[name=show-featured-image] { display: none; }
 
     .glitch-wrapper {
+        background-color: rebeccapurple;
         border-bottom-left-radius: $featured-img-major-border;
         border-bottom-right-radius: $featured-img-major-border;
         cursor: pointer;
@@ -23,14 +24,19 @@
                     transform .3s ease;
 
         .featured-photo {
-            object-fit: cover;
-            transition: transform .3s ease;
             width: 100%;
+        }
+
+        .glitch-canvas {
+            opacity: 1;
+            transition: opacity .3s ease;
         }
 
         &:hover {
             box-shadow: $global-shadow-block;
             transform: scale(1.02);
+            
+            .glitch-canvas { opacity: 0; }
         }
     }
 
@@ -40,6 +46,8 @@
         margin-top: 20px;
         max-height: 1000px;
         transform: scale(1.02);
+
+        .glitch-canvas { opacity: 0; }
     }
 
     .project-details__role {
