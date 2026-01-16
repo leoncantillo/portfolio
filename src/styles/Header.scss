@@ -52,6 +52,11 @@ header:has(.header) {
             text-decoration: none;
             transition: transform .3s ease;
 
+            .navbar__link {
+                display: inline-block;
+                width: 100%;
+            }
+
             .navbar__link:not(a[href="#projects"]) { color: var(--color-text); }
             &:hover { transform: scale(.95); }
         }
