@@ -1,7 +1,7 @@
 import { projects } from "../portfolio-data/projects.data";
 import { Link, useParams } from "react-router-dom";
 import PixelGlitchImage from '../components/PixelGlitchImage';
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import ImageFullscreenZoom from "../components/ImageFullscreenZoom";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
@@ -23,6 +23,13 @@ const ProjectDetails = () => {
       </section>
     );
   }
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // opcional
+    });
+  }, [project]); 
 
   const currentIndex = projects.findIndex(
     (p) => p.id === project.id
