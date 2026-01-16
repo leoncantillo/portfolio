@@ -48,6 +48,13 @@
                 right: 5px;
                 top: 5px;
         }
+
+        .expand-image__button--close {
+            display: flex;
+                place-items: center;
+                justify-content: center;
+            width: 40px;
+        }
     }
 
     input[name=show-featured-image]:checked + .glitch-wrapper {
