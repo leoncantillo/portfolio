@@ -12,7 +12,7 @@
     input[name=show-featured-image] { display: none; }
 
     .glitch-wrapper {
-        background-color: rebeccapurple;
+        display: block;
         border-bottom-left-radius: $featured-img-major-border;
         border-bottom-right-radius: $featured-img-major-border;
         cursor: pointer;
@@ -44,7 +44,7 @@
         }
     }
 
-    input[name=show-featured-image]:checked + label .glitch-wrapper {
+    input[name=show-featured-image]:checked + .glitch-wrapper {
         border-radius: $featured-img-minor-border;
         box-shadow: $global-shadow-block;
         margin-top: 20px;

@@ -43,8 +43,8 @@ const ProjectDetails = () => {
       {/* Header */}
       <header className="project-details__header">
         <input type="checkbox" name="show-featured-image" id="show-featured-image" />
-        <label htmlFor="show-featured-image">
-          <picture className="glitch-wrapper">
+        <label htmlFor="show-featured-image" className="glitch-wrapper">
+          <picture>
             <source srcSet={project.src_featured_img} />
 
             <img
