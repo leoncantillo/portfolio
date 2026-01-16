@@ -1,10 +1,11 @@
 import { projects } from "../portfolio-data/projects.data";
 import { Link, useParams } from "react-router-dom";
 import PixelGlitchImage from '../components/PixelGlitchImage';
+import { useRef } from "react";
+import ImageFullscreenZoom from "../components/ImageFullscreenZoom";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
 import '../styles/ProjectDetails.scss';
-import { useRef } from "react";
 
 const ProjectDetails = () => {
   const { slug } = useParams();
@@ -53,9 +54,13 @@ const ProjectDetails = () => {
               src={project.src_featured_img}
               alt={`Featured image of the ${project.title} project.`}
             />
-
-            <PixelGlitchImage imgRef={featuredImgRef} />
           </picture>
+          <PixelGlitchImage imgRef={featuredImgRef} />
+          
+          <ImageFullscreenZoom
+            imageSrc={project.src_featured_img}
+            alt={`Featured image of the ${project.title} project.`}
+          />
         </label>
 
         <h1>{project.title}</h1>

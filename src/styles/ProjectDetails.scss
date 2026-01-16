@@ -42,6 +42,13 @@
             
             .glitch-canvas { opacity: 0; }
         }
+
+        .expand-image__button--expand {
+            visibility: hidden;
+            position: absolute;
+                right: 5px;
+                top: 5px;
+        }
     }
 
     input[name=show-featured-image]:checked + .glitch-wrapper {
@@ -52,6 +59,7 @@
         transform: scale(1.02);
 
         .glitch-canvas { opacity: 0; }
+        .expand-image__button--expand { visibility: visible; }
     }
 
     .project-details__role {
