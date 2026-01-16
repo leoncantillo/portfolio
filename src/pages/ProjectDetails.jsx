@@ -1,10 +1,15 @@
 import { projects } from "../portfolio-data/projects.data";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import PixelGlitchImage from '../components/PixelGlitchImage';
+import { useEffect, useRef } from "react";
+import ImageFullscreenZoom from "../components/ImageFullscreenZoom";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
+import '../styles/ProjectDetails.scss';
 
 const ProjectDetails = () => {
   const { slug } = useParams();
+  const featuredImgRef = useRef();
 
   const project = projects.find(
     (p) => p.slug === `${slug}`
@@ -12,46 +17,77 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <section>
-        <h2>Proyecto no encontrado</h2>
+      <section className="project-404">
+        <h2>404 Proyecto no encontrado</h2>
+        <p>Volver a la página principal</p>
       </section>
     );
   }
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // opcional
+    });
+  }, [project]); 
+
+  const currentIndex = projects.findIndex(
+    (p) => p.id === project.id
+  );
+
+  const prevProject =
+    project.id > 1 && currentIndex > 0
+      ? projects[currentIndex - 1]
+      : null;
+
+  const nextProject =
+    currentIndex < projects.length - 1
+      ? projects[currentIndex + 1]
+      : null;
+
+
   return (
-    <Layout as='article' className="project-detail">
+    <Layout as='article' className="project-details">
       {/* Header */}
-      <header className="project-detail__header">
+      <header className="project-details__header">
+        <input type="checkbox" name="show-featured-image" id="show-featured-image" />
+        <label htmlFor="show-featured-image" className="glitch-wrapper">
+          <picture>
+            <source srcSet={project.src_featured_img} />
 
-        <picture className="glitch-wrapper">
-          <source srcSet={project.src_featured_img} />
-
-          <img
-            className="featured-photo"
-            src={project.src_featured_img}
+            <img
+              ref={featuredImgRef}
+              className="featured-photo"
+              src={project.src_featured_img}
+              alt={`Featured image of the ${project.title} project.`}
+            />
+          </picture>
+          <PixelGlitchImage imgRef={featuredImgRef} />
+          
+          <ImageFullscreenZoom
+            imageSrc={project.src_featured_img}
             alt={`Featured image of the ${project.title} project.`}
           />
-
-        </picture>
+        </label>
 
         <h1>{project.title}</h1>
         <p>{project.complete_description}</p>
-        <p className="project-detail__role">{project.role}</p>
+        <p className="project-details__role">{project.role}</p>
       </header>
 
       {/* Arquitectura */}
       {project.architecture && (
-        <section className="project-detail__architecture">
+        <section className="project-details__architecture">
           <h2>Arquitectura</h2>
           <p>{project.architecture}</p>
         </section>
       )}
 
       {/* Tecnologías */}
-      <section className="project-detail__tech">
+      <section className="project-details__tech">
         <h2>Tecnologías</h2>
 
-        <ul className="project-detail__list">
+        <ul className="project-details__list">
           {project.tech.map(({ icon, label, className }) => (
             <li key={label}>
               <TechItem
@@ -66,7 +102,7 @@ const ProjectDetails = () => {
 
       {/* Retos técnicos */}
       {project.challenges?.length > 0 && (
-        <section className="project-detail__challenges">
+        <section className="project-details__challenges">
           <h2>Retos técnicos</h2>
 
           <ul>
@@ -79,7 +115,7 @@ const ProjectDetails = () => {
 
       {/* Impacto */}
       {project.impact && (
-        <section className="project-detail__impact">
+        <section className="project-details__impact">
           <h2>Impacto</h2>
           <p>{project.impact}</p>
         </section>
@@ -87,7 +123,7 @@ const ProjectDetails = () => {
 
       {/* Aprendizajes */}
       {project.learnings?.length > 0 && (
-        <section className="project-detail__learnings">
+        <section className="project-details__learnings">
           <h2>Aprendizajes</h2>
 
           <ul>
@@ -100,7 +136,7 @@ const ProjectDetails = () => {
 
       {/* Enlaces */}
       {(project.repository || project.demo) && (
-        <footer className="project-detail__links">
+        <footer className="project-details__links">
           <h2>Enlaces</h2>
 
           <ul>
@@ -130,6 +166,24 @@ const ProjectDetails = () => {
               </li>
             )}
           </ul>
+
+          <nav className="project-details__pagination">
+            {prevProject && (
+              <Link
+                to={`/projects/${prevProject.slug}`}
+              >
+                ← Proyecto anterior
+              </Link>
+            )}
+
+            {nextProject && (
+              <Link
+                to={`/projects/${nextProject.slug}`}
+              >
+                Proyecto siguiente →
+              </Link>
+            )}
+          </nav>
         </footer>
       )}
     </Layout>
