@@ -1,11 +1,14 @@
 import { projects } from "../portfolio-data/projects.data";
 import { Link, useParams } from "react-router-dom";
+import PixelGlitchImage from '../components/PixelGlitchImage';
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
 import '../styles/ProjectDetails.scss';
+import { useRef } from "react";
 
 const ProjectDetails = () => {
   const { slug } = useParams();
+  const featuredImgRef = useRef();
 
   const project = projects.find(
     (p) => p.slug === `${slug}`
@@ -41,16 +44,18 @@ const ProjectDetails = () => {
       <header className="project-details__header">
         <input type="checkbox" name="show-featured-image" id="show-featured-image" />
         <label htmlFor="show-featured-image">
-        <picture className="glitch-wrapper">
-          <source srcSet={project.src_featured_img} />
+          <picture className="glitch-wrapper">
+            <source srcSet={project.src_featured_img} />
 
-          <img
-            className="featured-photo"
-            src={project.src_featured_img}
-            alt={`Featured image of the ${project.title} project.`}
-          />
+            <img
+              ref={featuredImgRef}
+              className="featured-photo"
+              src={project.src_featured_img}
+              alt={`Featured image of the ${project.title} project.`}
+            />
 
-        </picture>
+            <PixelGlitchImage imgRef={featuredImgRef} />
+          </picture>
         </label>
 
         <h1>{project.title}</h1>
