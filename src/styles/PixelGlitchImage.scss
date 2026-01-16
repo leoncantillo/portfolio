@@ -1,0 +1,12 @@
+.glitch-wrapper {
+  position: relative;
+
+  .featured-photo {
+    object-fit: cover;
+  }
+
+  .glitch-canvas {
+    position: absolute;
+      inset: 0;
+  }
+}
