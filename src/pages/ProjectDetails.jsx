@@ -1,15 +1,18 @@
 import { projects } from "../portfolio-data/projects.data";
 import { Link, useParams } from "react-router-dom";
 import PixelGlitchImage from '../components/PixelGlitchImage';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ImageFullscreenZoom from "../components/ImageFullscreenZoom";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
 import '../styles/ProjectDetails.scss';
+import ImageCarousel from "../components/ImageCarousel";
 
 const ProjectDetails = () => {
   const { slug } = useParams();
   const featuredImgRef = useRef();
+  const [openGallery, setOpenGallery] = useState(false);
+  const [indexGallery, setIndexGallery] = useState(0);
 
   const project = projects.find(
     (p) => p.slug === `${slug}`
@@ -45,6 +48,7 @@ const ProjectDetails = () => {
       ? projects[currentIndex + 1]
       : null;
 
+  const projectGallery = [project.src_featured_img, ...project.gallery ?? []];
 
   return (
     <Layout as='article' className="project-details">
@@ -63,11 +67,6 @@ const ProjectDetails = () => {
             />
           </picture>
           <PixelGlitchImage imgRef={featuredImgRef} />
-          
-          <ImageFullscreenZoom
-            imageSrc={project.src_featured_img}
-            alt={`Featured image of the ${project.title} project.`}
-          />
         </label>
 
         <h1>{project.title}</h1>
@@ -99,6 +98,29 @@ const ProjectDetails = () => {
           ))}
         </ul>
       </section>
+
+      {/* Galería de Fotos */}
+      {project.gallery?.length > 0 && (
+        <section className="project-details__image-gallery">
+          <ImageCarousel>
+            {project.gallery.map((imgURL, index) => {
+              const i = index+1; // featured + gallery
+              return (
+                <img
+                  key={i}
+                  src={imgURL}
+                  alt={imgURL}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setIndexGallery(i);
+                    setOpenGallery(true);
+                  }}
+                />
+              );
+            })}
+          </ImageCarousel>
+        </section>
+      )}
 
       {/* Retos técnicos */}
       {project.challenges?.length > 0 && (
@@ -186,6 +208,14 @@ const ProjectDetails = () => {
           </nav>
         </footer>
       )}
+
+      {/* Visor fullscreen */}
+      <ImageFullscreenZoom
+        images={projectGallery}
+        initialIndex={indexGallery}
+        open={openGallery}
+        onClose={() => setOpenGallery(false)}
+      />
     </Layout>
   );
 };
