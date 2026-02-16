@@ -9,7 +9,7 @@ export const skillsData = [
       { icon: TechLogos.Cpp, label: "C++" },
       { icon: TechLogos.Java, label: "Java" },
       { icon: TechLogos.Kotlin, label: "Kotlin" },
-      { icon: TechLogos.Spring, label: "Spring" },
+      { icon: TechLogos.Spring, label: "Spring Boot" },
       { icon: TechLogos.TypeScript, label: "TypeScript" },
       { icon: TechLogos.Expressjs, label: "ExpressJs" },
       { icon: TechLogos.MySQL, label: "MySQL" },
