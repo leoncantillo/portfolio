@@ -32,7 +32,7 @@ const ProjectDetails = () => {
       top: 0,
       behavior: "smooth" // opcional
     });
-  }, [project]); 
+  }, [project]);
 
   const currentIndex = projects.findIndex(
     (p) => p.id === project.id
@@ -184,6 +184,19 @@ const ProjectDetails = () => {
                   rel="noopener noreferrer"
                 >
                   <i className="fa-solid fa-pager"></i>Demo
+                </a>
+              </li>
+            )}
+
+            {project.data_base && (
+              <li>
+                <a
+                  className="button"
+                  href={project.data_base}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-solid fa-database"></i>Base de Datos
                 </a>
               </li>
             )}
