@@ -38,7 +38,7 @@ const Introduction = () => {
           <li>
             <a className="hero__networks-button hero__networks-button--github button"
               href="https://github.com/leoncantillo/" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-github"></i> Github</a>
+              <i className="fa-brands fa-github"></i> GitHub</a>
           </li>
         </ul>
       </Layout>
