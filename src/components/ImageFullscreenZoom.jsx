@@ -75,12 +75,12 @@ export default function ImageFullscreenZoom({
   return (
     <div style={styles.overlay}>
       {/* Cerrar */}
-      <button style={styles.closeButton} onClick={onClose}>
+      <button type="button" aria-label="Cerrar galería" style={styles.closeButton} onClick={onClose}>
         <i className="fa-solid fa-xmark" />
       </button>
 
       {/* Flecha izquierda */}
-      <button style={{ ...styles.arrow, left: 20 }} onClick={prevImage}>
+      <button type="button" aria-label="Imagen anterior" style={{ ...styles.arrow, left: 20 }} onClick={prevImage}>
         ‹
       </button>
 
@@ -103,7 +103,7 @@ export default function ImageFullscreenZoom({
       </div>
 
       {/* Flecha derecha */}
-      <button style={{ ...styles.arrow, right: 20 }} onClick={nextImage}>
+      <button type="button" aria-label="Imagen siguiente" style={{ ...styles.arrow, right: 20 }} onClick={nextImage}>
         ›
       </button>
 
@@ -113,6 +113,7 @@ export default function ImageFullscreenZoom({
           <img
             key={img}
             src={img}
+            alt={`Miniatura ${index + 1}`}
             onClick={() => {
               setZoom(false);
               setCurrentIndex(index);
