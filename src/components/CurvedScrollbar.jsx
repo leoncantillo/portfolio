@@ -182,7 +182,9 @@ export default function CurvedScrollbar({
             state.dragging = false;
             try {
                 thumbPath.releasePointerCapture(state.pointerId);
-            } catch { }
+            } catch {
+                // The pointer may already have been released by the browser.
+            }
             state.pointerId = null;
         }
 
