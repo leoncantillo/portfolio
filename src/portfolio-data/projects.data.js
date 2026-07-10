@@ -15,9 +15,9 @@ export const projects = [
     tech: [
       { icon: TechLogos.Php, label: "PHP" },
       { icon: TechLogos.MySQL, label: "MySQL" },
-      { icon: TechLogos.SQL, label: "SQL" },
-      { icon: TechLogos.XAMPP, label: "XAMPP" },
-      { icon: TechLogos.Email, label: "PHP Mail" },
+      { icon: TechLogos.Qicon, label: "SQL" },
+      { icon: TechLogos.Qicon, label: "XAMPP" },
+      { icon: TechLogos.Qicon, label: "PHP Mail" },
     ],
     challenges: [
       "Implementación correcta del patrón MVC en PHP puro",
@@ -52,10 +52,10 @@ export const projects = [
       { icon: TechLogos.Java, label: "Java" },
       { icon: TechLogos.Spring, label: "Spring Boot" },
       { icon: TechLogos.PostgreSQL, label: "PostgreSQL" },
-      { icon: TechLogos.Maven, label: "Maven" },
-      { icon: TechLogos.Maven, label: "MapStruct" },
+      { icon: TechLogos.Qicon, label: "Maven" },
+      { icon: TechLogos.Qicon, label: "MapStruct" },
       { icon: TechLogos.Docker, label: "Docker" },
-      { icon: TechLogos.JWT, label: "JWT" },
+      { icon: TechLogos.Qicon, label: "JWT" },
     ],
     gallery: [
       "/ReservasUno Gallery - image 1.png",
