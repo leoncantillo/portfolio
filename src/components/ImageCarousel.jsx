@@ -3,20 +3,17 @@ import '../styles/ImageCarousel.scss';
 
 function ImageCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [slideDone, setSlideDone] = useState(true);
-  const [timeID, setTimeID] = useState(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (slideDone) {
-      setSlideDone(false);
-      setTimeID(
-        setTimeout(() => {
-          slideNext();
-          setSlideDone(true);
-        }, 5000)
-      );
-    }
-  }, [slideDone]);
+    if (isPaused || children.length < 2) return undefined;
+
+    const timerId = window.setTimeout(() => {
+      setActiveIndex((index) => (index + 1) % children.length);
+    }, 5000);
+
+    return () => window.clearTimeout(timerId);
+  }, [activeIndex, children.length, isPaused]);
 
   const slideNext = () => {
     setActiveIndex((val) => {
@@ -38,24 +35,11 @@ function ImageCarousel({ children }) {
     });
   };
 
-  const AutoPlayStop = () => {
-    if (timeID > 0) {
-      clearTimeout(timeID);
-      setSlideDone(false);
-    }
-  };
-
-  const AutoPlayStart = () => {
-    if (!slideDone) {
-      setSlideDone(true);
-    }
-  };
-
   return (
     <div
       className="image-carousel__slider"
-      onMouseEnter={AutoPlayStop}
-      onMouseLeave={AutoPlayStart}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       {children.map((item, index) => {
         return (
