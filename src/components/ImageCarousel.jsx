@@ -73,6 +73,8 @@ function ImageCarousel({ children }) {
           return (
             <button
               key={index}
+              type="button"
+              aria-label={`Mostrar imagen ${index + 1}`}
               className={
                 activeIndex === index
                   ? "image-carousel__slider__links-small image-carousel__slider__links-small-active"
@@ -88,22 +90,26 @@ function ImageCarousel({ children }) {
       </div>
 
       <button
+        type="button"
+        aria-label="Imagen siguiente"
         className="slider__btn-next"
         onClick={(e) => {
           e.preventDefault();
           slideNext();
         }}
       >
-        <i class="fa-solid fa-chevron-right"></i>
+        <i className="fa-solid fa-chevron-right"></i>
       </button>
       <button
+        type="button"
+        aria-label="Imagen anterior"
         className="slider__btn-prev"
         onClick={(e) => {
           e.preventDefault();
           slidePrev();
         }}
       >
-        <i class="fa-solid fa-chevron-left"></i>
+        <i className="fa-solid fa-chevron-left"></i>
       </button>
     </div>
   );

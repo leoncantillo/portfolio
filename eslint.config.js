@@ -5,6 +5,9 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
+    ignores: ["dist/**"],
+  },
+  {
     files: ["**/*.{js,mjs,cjs,jsx}"],
     plugins: { js, react: pluginReact },
     languageOptions: { globals: globals.browser },
@@ -16,6 +19,8 @@ export default defineConfig([
     extends: ["js/recommended", pluginReact.configs.flat.recommended],
     rules: {
       "react/react-in-jsx-scope": "off",
+      // This JavaScript project does not use the PropTypes runtime package.
+      "react/prop-types": "off",
       "semi": ["error", "always"],
     },
   },
