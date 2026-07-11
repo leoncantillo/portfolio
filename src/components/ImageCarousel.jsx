@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 import '../styles/ImageCarousel.scss';
 
-function ImageCarousel({ children }) {
+function ImageCarousel({ children, paused = false }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (isPaused || children.length < 2) return undefined;
+    if (isPaused || paused || children.length < 2) return undefined;
 
     const timerId = window.setTimeout(() => {
       setActiveIndex((index) => (index + 1) % children.length);
     }, 5000);
 
     return () => window.clearTimeout(timerId);
-  }, [activeIndex, children.length, isPaused]);
+  }, [activeIndex, children.length, isPaused, paused]);
 
   const slideNext = () => {
     setActiveIndex((val) => {
