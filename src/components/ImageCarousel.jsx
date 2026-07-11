@@ -44,8 +44,9 @@ function ImageCarousel({ children, paused = false }) {
       {children.map((item, index) => {
         return (
           <div
-            className={"slider__item slider__item-active-" + (activeIndex + 1)}
+            className="slider__item"
             key={index}
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
             {item}
           </div>
