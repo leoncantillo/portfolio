@@ -20,6 +20,10 @@ export default function ImageFullscreenZoom({
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [zoom, setZoom] = useState(false);
   const containerRef = useRef(null);
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const previouslyFocusedElementRef = useRef(null);
+  const wasOpenRef = useRef(false);
 
   // sincronizar índice al abrir
   useEffect(() => {
@@ -29,6 +33,23 @@ export default function ImageFullscreenZoom({
     }
   }, [open, initialIndex]);
 
+  useEffect(() => {
+    if (open) {
+      wasOpenRef.current = true;
+      previouslyFocusedElementRef.current = document.activeElement;
+      const frameId = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+
+      return () => window.cancelAnimationFrame(frameId);
+    }
+
+    if (wasOpenRef.current) {
+      previouslyFocusedElementRef.current?.focus();
+      wasOpenRef.current = false;
+    }
+
+    return undefined;
+  }, [open]);
+
   // ESC y flechas
   useEffect(() => {
     if (!open) return;
@@ -37,6 +58,24 @@ export default function ImageFullscreenZoom({
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight") nextImage();
       if (e.key === "ArrowLeft") prevImage();
+
+      if (e.key === "Tab") {
+        const focusableElements = dialogRef.current?.querySelectorAll(
+          'button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusableElements?.length) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -73,9 +112,16 @@ export default function ImageFullscreenZoom({
   };
 
   return (
-    <div style={styles.overlay}>
+    <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="image-gallery-title"
+      style={styles.overlay}
+    >
+      <h2 id="image-gallery-title" style={styles.visuallyHidden}>Galería de imágenes</h2>
       {/* Cerrar */}
-      <button type="button" aria-label="Cerrar galería" style={styles.closeButton} onClick={onClose}>
+      <button ref={closeButtonRef} type="button" aria-label="Cerrar galería" style={styles.closeButton} onClick={onClose}>
         <i className="fa-solid fa-xmark" />
       </button>
 
@@ -110,23 +156,26 @@ export default function ImageFullscreenZoom({
       {/* Thumbnails */}
       <div style={styles.thumbnails}>
         {images.map((img, index) => (
-          <img
+          <button
             key={img}
-            src={img}
-            alt={`Miniatura ${index + 1}`}
+            type="button"
+            aria-label={`Ver imagen ${index + 1}`}
+            aria-current={index === currentIndex ? "true" : undefined}
             onClick={() => {
               setZoom(false);
               setCurrentIndex(index);
             }}
             style={{
-              ...styles.thumbnail,
+              ...styles.thumbnailButton,
               opacity: index === currentIndex ? 1 : 0.4,
               border:
                 index === currentIndex
                   ? "2px solid white"
                   : "2px solid transparent",
             }}
-          />
+          >
+            <img src={img} alt="" style={styles.thumbnail} />
+          </button>
         ))}
       </div>
     </div>
@@ -185,7 +234,22 @@ const styles = {
     width: 60,
     height: 60,
     objectFit: "cover",
+    display: "block",
+  },
+  thumbnailButton: {
+    padding: 0,
     cursor: "pointer",
     transition: "opacity 0.2s, border 0.2s",
+  },
+  visuallyHidden: {
+    position: "absolute",
+    width: 1,
+    height: 1,
+    padding: 0,
+    margin: -1,
+    overflow: "hidden",
+    clip: "rect(0, 0, 0, 0)",
+    whiteSpace: "nowrap",
+    border: 0,
   },
 };

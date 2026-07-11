@@ -112,9 +112,18 @@ const ProjectDetails = () => {
                   src={imgURL}
                   alt={imgURL}
                   style={{ cursor: "pointer" }}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => {
                     setIndexGallery(i);
                     setOpenGallery(true);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      setIndexGallery(i);
+                      setOpenGallery(true);
+                    }
                   }}
                 />
               );
