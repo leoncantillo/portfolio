@@ -11,6 +11,14 @@
         grid-column: 1 / -1;
     }
 
+    .projects-archive__header {
+        grid-column: 1 / -1;
+
+        p {
+            margin-top: 8px;
+        }
+    }
+
     .project-card {
         --thumb-color: var(--palet-color-1);
         --thumb-color-active: var(--palet-color-1);
@@ -26,6 +34,7 @@
         .project-card__actions > * { padding: 0 20px; }
 
         .project-card__header {
+            text-align: center;
             
             img.featured-photo {
                 border-top-left-radius: $global-major-radius;
@@ -36,6 +45,10 @@
                 transition: height .3s ease;
                 z-index: 2;
             }
+        }
+
+        .project-card__actions {
+            text-align: center;
         }
 
         .project-card__role { 
