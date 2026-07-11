@@ -110,6 +110,11 @@ const Introduction = () => {
           <input className="contact__honeypot" type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio" />
           <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="¡Hola! He recibido tu mensaje. Gracias por contactarme; te responderé lo antes posible. — León Cantillo"
+          />
           <button className="contact__button" type="submit" disabled={contactStatus === 'submitting'}>
             {contactStatus === 'submitting' ? 'Enviando…' : 'Enviar'}
           </button>
