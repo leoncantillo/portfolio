@@ -103,7 +103,7 @@ const ProjectDetails = () => {
       {/* Galería de Fotos */}
       {project.gallery?.length > 0 && (
         <section className="project-details__image-gallery">
-          <ImageCarousel>
+          <ImageCarousel paused={openGallery}>
             {project.gallery.map((imgURL, index) => {
               const i = index+1; // featured + gallery
               return (
