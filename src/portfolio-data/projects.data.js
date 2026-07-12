@@ -1,10 +1,25 @@
 import * as TechLogos from '../assets/TechLogos';
 
+// Project images
+import imgMiscelaneaEllo from '../assets/images/Miscelanea Ello.png';
+import imgReservasUno from '../assets/images/ReservasUno.png';
+import imgReservasUnoGallery1 from '../assets/images/ReservasUno Gallery - image 1.png';
+import imgReservasUnoGallery2 from '../assets/images/ReservasUno Gallery - image 2.png';
+import imgReservasUnoGallery3 from '../assets/images/ReservasUno Gallery - image 3.png';
+import imgReservasUnoGallery4 from '../assets/images/ReservasUno Gallery - image 4.png';
+import imgReservasUnoGallery5 from '../assets/images/ReservasUno Gallery - image 5.png';
+import imgReservasUnoGallery6 from '../assets/images/ReservasUno Gallery - image 6.png';
+import imgReservasUnoGallery7 from '../assets/images/ReservasUno Gallery - image 7.png';
+import imgSolarSystem3D from '../assets/images/Solar System 3D.jpg';
+import imgSolarSystem3DGallery1 from '../assets/images/Solar System 3D Gallery - image 1.png';
+import imgSolarSystem3DGallery2 from '../assets/images/Solar System 3D Gallery - image 2.png';
+import imgSolarSystem3DGallery3 from '../assets/images/Solar System 3D Gallery - image 3.png';
+
 export const projects = [
   {
     id: 1,
     slug: "miscellaneousello-online-store",
-    src_featured_img: "/Miscelanea Ello.png",
+    src_featured_img: imgMiscelaneaEllo,
     title: "Miscelanea Ello · Tienda online",
     brief_description:
       "Tienda online desarrollada en PHP bajo el patrón MVC, con gestión completa de productos, usuarios y pedidos.",
@@ -40,7 +55,7 @@ export const projects = [
   {
     id: 2,
     slug: "reservasuno-airline-system",
-    src_featured_img: "/ReservasUno.png",
+    src_featured_img: imgReservasUno,
     title: "ReservasUno · Sistema de reservas aéreas",
     brief_description:
       "Plataforma web y API REST para la gestión de vuelos y reservas aéreas, con autenticación y flujo completo de búsqueda y selección.",
@@ -58,13 +73,13 @@ export const projects = [
       { icon: TechLogos.Qicon, label: "JWT" },
     ],
     gallery: [
-      { imgURL: "/ReservasUno Gallery - image 1.png", alt: "Api test /login."},
-      { imgURL: "/ReservasUno Gallery - image 2.png", alt: "Api test /flights."},
-      { imgURL: "/ReservasUno Gallery - image 3.png", alt: "Test de búsqueda en interfaz gráfica."},
-      { imgURL: "/ReservasUno Gallery - image 4.png", alt: "Resultados de búsqueda en interfaz gráfica."},
-      { imgURL: "/ReservasUno Gallery - image 5.png", alt: "Vuelos disponibles."},
-      { imgURL: "/ReservasUno Gallery - image 6.png", alt: "Buscar vuelo por cédula de cliente."},
-      { imgURL: "/ReservasUno Gallery - image 7.png", alt: "Intrerfaz para login."},
+      { imgURL: imgReservasUnoGallery1, alt: "Api test /login."},
+      { imgURL: imgReservasUnoGallery2, alt: "Api test /flights."},
+      { imgURL: imgReservasUnoGallery3, alt: "Test de búsqueda en interfaz gráfica."},
+      { imgURL: imgReservasUnoGallery4, alt: "Resultados de búsqueda en interfaz gráfica."},
+      { imgURL: imgReservasUnoGallery5, alt: "Vuelos disponibles."},
+      { imgURL: imgReservasUnoGallery6, alt: "Buscar vuelo por cédula de cliente."},
+      { imgURL: imgReservasUnoGallery7, alt: "Intrerfaz para login."},
     ],
     challenges: [
       "Diseño del modelo de datos para vuelos, reservas y pasajeros",
@@ -89,7 +104,7 @@ export const projects = [
   {
     id: 3,
     slug: "3d-solar-system",
-    src_featured_img: "/Solar System 3D.jpg",
+    src_featured_img: imgSolarSystem3D,
     title: "Sistema Solar 3D",
     brief_description:
       "Aplicación web interactiva que representa el sistema solar en 3D, permitiendo explorar los planetas mediante animaciones fluidas y una visualización espacial realista.",
@@ -105,9 +120,9 @@ export const projects = [
       { icon: TechLogos.Vite, label: "Vite" },
     ],
     gallery: [
-    { imgURL: "/Solar System 3D Gallery - image 1.png", alt: "Vista enfocada a Mercurio."},
-    { imgURL: "/Solar System 3D Gallery - image 2.png", alt: "Vista enfocada a Jupiter."},
-    { imgURL: "/Solar System 3D Gallery - image 3.png", alt: "Texto en 3D"},
+    { imgURL: imgSolarSystem3DGallery1, alt: "Vista enfocada a Mercurio."},
+    { imgURL: imgSolarSystem3DGallery2, alt: "Vista enfocada a Jupiter."},
+    { imgURL: imgSolarSystem3DGallery3, alt: "Texto en 3D"},
     ],
     challenges: [
       "Sincronizar las animaciones orbitales y rotacionales de todos los planetas para mantener coherencia visual.",
