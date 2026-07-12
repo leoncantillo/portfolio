@@ -4,6 +4,7 @@ import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 import '../styles/Introduction.scss';
+import profilePhoto from '../assets/images/profile-photo.jpeg';
 import './../styles/section_hero.scss';
 import './../styles/section_about.scss';
 import './../styles/section_skills.scss';
@@ -57,7 +58,7 @@ const Introduction = () => {
         </div>
         <div className="about__photo">
           <picture>
-            <img src="./profile-photo.jpeg" alt="profile-photo" />
+            <img src={profilePhoto} alt="profile-photo" />
           </picture>
         </div>
       </Layout>
