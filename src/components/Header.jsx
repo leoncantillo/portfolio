@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./../styles/Header.scss";
 import Layout from "./Layout";
+import profilePhoto from "../assets/images/profile-photo.jpeg";
 
 const Header = () => {
   const [menuState, setMenuState] = useState('closed');
@@ -17,7 +18,7 @@ const Header = () => {
     <>
       <Layout as="header" containerClasses="header">
         <div className="profile-card">
-          <img src="./profile-photo.jpeg" alt="profile-photo" />
+          <img src={profilePhoto} alt="profile-photo" />
           <div className="profile-card__info">
             <h3 className="profile-card__name">León Cantillo</h3>
             <h4 className="profile-card__professional-title">Software Developer</h4>
