@@ -23,6 +23,7 @@ const ProjectDetails = () => {
       <section className="project-404">
         <h2>404 Proyecto no encontrado</h2>
         <p>El proyecto que buscas no existe o fue movido.</p>
+        <br/>
         <Link to="/" className="button">Volver a la página principal</Link>
       </section>
     );
