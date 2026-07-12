@@ -58,12 +58,13 @@ export const projects = [
       { icon: TechLogos.Qicon, label: "JWT" },
     ],
     gallery: [
-      "/ReservasUno Gallery - image 1.png",
-      "/ReservasUno Gallery - image 2.png",
-      "/ReservasUno Gallery - image 3.png",
-      "/ReservasUno Gallery - image 4.png",
-      "/ReservasUno Gallery - image 5.png",
-      "/ReservasUno Gallery - image 6.png",
+      { imgURL: "/ReservasUno Gallery - image 1.png", alt: "Api test /login."},
+      { imgURL: "/ReservasUno Gallery - image 2.png", alt: "Api test /flights."},
+      { imgURL: "/ReservasUno Gallery - image 3.png", alt: "Test de búsqueda en interfaz gráfica."},
+      { imgURL: "/ReservasUno Gallery - image 4.png", alt: "Resultados de búsqueda en interfaz gráfica."},
+      { imgURL: "/ReservasUno Gallery - image 5.png", alt: "Vuelos disponibles."},
+      { imgURL: "/ReservasUno Gallery - image 6.png", alt: "Buscar vuelo por cédula de cliente."},
+      { imgURL: "/ReservasUno Gallery - image 7.png", alt: "Intrerfaz para login."},
     ],
     challenges: [
       "Diseño del modelo de datos para vuelos, reservas y pasajeros",
@@ -104,9 +105,9 @@ export const projects = [
       { icon: TechLogos.Vite, label: "Vite" },
     ],
     gallery: [
-      "/Solar System 3D Gallery - image 1.png",
-      "/Solar System 3D Gallery - image 2.png",
-      "/Solar System 3D Gallery - image 3.png",
+    { imgURL: "/Solar System 3D Gallery - image 1.png", alt: "Vista enfocada a Mercurio."},
+    { imgURL: "/Solar System 3D Gallery - image 2.png", alt: "Vista enfocada a Jupiter."},
+    { imgURL: "/Solar System 3D Gallery - image 3.png", alt: "Texto en 3D"},
     ],
     challenges: [
       "Sincronizar las animaciones orbitales y rotacionales de todos los planetas para mantener coherencia visual.",
