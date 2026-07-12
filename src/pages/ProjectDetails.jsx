@@ -49,7 +49,10 @@ const ProjectDetails = () => {
       ? projects[currentIndex + 1]
       : null;
 
-  const projectGallery = [project.src_featured_img, ...project.gallery ?? []];
+  const projectGallery = [
+  project.src_featured_img,
+  ...(project.gallery?.map(item => item.imgURL) ?? [])
+];
 
   return (
     <Layout as='article' className="project-details">
@@ -104,13 +107,13 @@ const ProjectDetails = () => {
       {project.gallery?.length > 0 && (
         <section className="project-details__image-gallery">
           <ImageCarousel paused={openGallery}>
-            {project.gallery.map((imgURL, index) => {
+            {project.gallery.map(({imgURL, alt}, index) => {
               const i = index+1; // featured + gallery
               return (
                 <img
                   key={i}
                   src={imgURL}
-                  alt={imgURL}
+                  alt={alt}
                   style={{ cursor: "pointer" }}
                   role="button"
                   tabIndex={0}
