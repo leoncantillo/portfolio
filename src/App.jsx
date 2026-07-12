@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename="/portfolio">
         <Routes>
           <Route index element={
             <>
