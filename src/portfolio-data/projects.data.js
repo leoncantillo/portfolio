@@ -138,6 +138,6 @@ export const projects = [
       "Optimización de escenas 3D para aplicaciones web.",
     ],
     repository: "https://github.com/leoncantillo/learning_threejs",
-    demo: "https://threejspractice.thebearstack.com/practice_3",
+    demo: "https://leoncantillo.github.io/learning_threejs/#/practice_3",
   },
 ];
