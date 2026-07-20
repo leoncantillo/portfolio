@@ -201,19 +201,6 @@ const ProjectDetails = () => {
                 </a>
               </li>
             )}
-
-            {project.data_base && (
-              <li>
-                <a
-                  className="button"
-                  href={project.data_base}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-solid fa-database"></i>Base de Datos
-                </a>
-              </li>
-            )}
           </ul>
 
           <nav className="project-details__pagination">
