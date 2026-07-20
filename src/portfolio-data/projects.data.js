@@ -98,7 +98,7 @@ export const projects = [
       "Mapeo de entidades con MapStruct",
       "Buenas prácticas iniciales en backend",
     ],
-    repository: "https://github.com/leoncantillo/reservasuno-backend",
+    repository: "https://github.com/ldcantillom/reservasuno-backend",
     data_base: "https://drive.google.com/file/d/1o9bLDqZ1hZkJ1L241E418HrADX-IkceC/view?usp=sharing",
   },
   {
