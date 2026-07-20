@@ -1,19 +1,19 @@
 import * as TechLogos from '../assets/TechLogos';
 
 // Project images
-import imgMiscelaneaEllo from '../assets/images/Miscelanea Ello.png';
-import imgReservasUno from '../assets/images/ReservasUno.png';
-import imgReservasUnoGallery1 from '../assets/images/ReservasUno Gallery - image 1.png';
-import imgReservasUnoGallery2 from '../assets/images/ReservasUno Gallery - image 2.png';
-import imgReservasUnoGallery3 from '../assets/images/ReservasUno Gallery - image 3.png';
-import imgReservasUnoGallery4 from '../assets/images/ReservasUno Gallery - image 4.png';
-import imgReservasUnoGallery5 from '../assets/images/ReservasUno Gallery - image 5.png';
-import imgReservasUnoGallery6 from '../assets/images/ReservasUno Gallery - image 6.png';
-import imgReservasUnoGallery7 from '../assets/images/ReservasUno Gallery - image 7.png';
-import imgSolarSystem3D from '../assets/images/Solar System 3D.jpg';
-import imgSolarSystem3DGallery1 from '../assets/images/Solar System 3D Gallery - image 1.png';
-import imgSolarSystem3DGallery2 from '../assets/images/Solar System 3D Gallery - image 2.png';
-import imgSolarSystem3DGallery3 from '../assets/images/Solar System 3D Gallery - image 3.png';
+import imgMiscelaneaEllo from '../assets/images/miscelanea-ello/cover.png';
+import imgReservasUno from '../assets/images/reservasuno/cover.png';
+import imgReservasUnoGallery1 from '../assets/images/reservasuno/1 - Api test endpoint login.png';
+import imgReservasUnoGallery2 from '../assets/images/reservasuno/2 - Api test endpoint flights.png';
+import imgReservasUnoGallery3 from '../assets/images/reservasuno/3 - Test de búsqueda en interfaz gráfica.png';
+import imgReservasUnoGallery4 from '../assets/images/reservasuno/4 - Resultados de búsqueda en interfaz gráfica.png';
+import imgReservasUnoGallery5 from '../assets/images/reservasuno/5 - Vuelos disponibles.png';
+import imgReservasUnoGallery6 from '../assets/images/reservasuno/6 - Buscar vuelo por cédula de cliente.png';
+import imgReservasUnoGallery7 from '../assets/images/reservasuno/7 - Intrerfaz para login.png';
+import imgSolarSystem3D from '../assets/images/solar-system-3d/cover.png';
+import imgSolarSystem3DGallery1 from '../assets/images/solar-system-3d/1 - Vista enfocada a Mercurio.png';
+import imgSolarSystem3DGallery2 from '../assets/images/solar-system-3d/2 - Vista enfocada a Jupiter.png';
+import imgSolarSystem3DGallery3 from '../assets/images/solar-system-3d/3 - Texto en 3D.png';
 
 export const projects = [
   {
