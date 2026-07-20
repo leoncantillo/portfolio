@@ -1,12 +1,16 @@
 import * as TechLogos from '../../assets/TechLogos';
-import { getProjectImages } from '../../assets/project.images';
+import { getProjectMedia } from '../../assets/project.media';
 
-const images = getProjectImages('reservasuno');
+const media = getProjectMedia('reservasuno');
 
 export default {
     id: 2,
     slug: "reservasuno-airline-system",
-    src_featured_img: images.cover,
+    featured: {
+        src: media.cover,
+        type: "image",
+        alt: "ReservasUno",
+    },
     title: "ReservasUno · Sistema de reservas aéreas",
     brief_description:
     "Plataforma web y API REST para la gestión de vuelos y reservas aéreas, con autenticación y flujo completo de búsqueda y selección.",
@@ -24,13 +28,13 @@ export default {
     { icon: TechLogos.Qicon, label: "JWT" },
     ],
     gallery: [
-    { imgURL: images.gallery[0], alt: "Api test /login." },
-    { imgURL: images.gallery[1], alt: "Api test /flights." },
-    { imgURL: images.gallery[2], alt: "Test de búsqueda en interfaz gráfica." },
-    { imgURL: images.gallery[3], alt: "Resultados de búsqueda en interfaz gráfica." },
-    { imgURL: images.gallery[4], alt: "Vuelos disponibles." },
-    { imgURL: images.gallery[5], alt: "Buscar vuelo por cédula de cliente." },
-    { imgURL: images.gallery[6], alt: "Interfaz para login." },
+    { src: media.gallery[0].src, alt: "Api test /login.", type: media.gallery[0].type },
+    { src: media.gallery[1].src, alt: "Api test /flights.", type: media.gallery[1].type },
+    { src: media.gallery[2].src, alt: "Test de búsqueda en interfaz gráfica.", type: media.gallery[2].type },
+    { src: media.gallery[3].src, alt: "Resultados de búsqueda en interfaz gráfica.", type: media.gallery[3].type },
+    { src: media.gallery[4].src, alt: "Vuelos disponibles.", type: media.gallery[4].type },
+    { src: media.gallery[5].src, alt: "Buscar vuelo por cédula de cliente.", type: media.gallery[5].type },
+    { src: media.gallery[6].src, alt: "Interfaz para login.", type: media.gallery[6].type },
     ],
     challenges: [
     "Diseño del modelo de datos para vuelos, reservas y pasajeros",

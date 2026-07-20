@@ -2,7 +2,7 @@ import { projects } from "../portfolio-data/projects.data";
 import { Link, useParams } from "react-router-dom";
 import PixelGlitchImage from '../components/PixelGlitchImage';
 import { useEffect, useRef, useState } from "react";
-import ImageFullscreenZoom from "../components/ImageFullscreenZoom";
+import MediaFullScreenViewer from "../components/MediaFullScreenViewer";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
 import '../styles/ProjectDetails.scss';
@@ -51,9 +51,9 @@ const ProjectDetails = () => {
       : null;
 
   const projectGallery = [
-  project.src_featured_img,
-  ...(project.gallery?.map(item => item.imgURL) ?? [])
-];
+    project.featured,
+    ...(project.gallery ?? []),
+  ];
 
   return (
     <Layout as='article' className="project-details">
@@ -62,13 +62,13 @@ const ProjectDetails = () => {
         <input type="checkbox" name="show-featured-image" id="show-featured-image" />
         <label htmlFor="show-featured-image" className="glitch-wrapper">
           <picture>
-            <source srcSet={project.src_featured_img} />
+            <source srcSet={project.featured.src} />
 
             <img
               ref={featuredImgRef}
               className="featured-photo"
-              src={project.src_featured_img}
-              alt={`Featured image of the ${project.title} project.`}
+              src={project.featured.src}
+              alt={project.featured.alt}
             />
           </picture>
           <PixelGlitchImage imgRef={featuredImgRef} />
@@ -108,24 +108,41 @@ const ProjectDetails = () => {
       {project.gallery?.length > 0 && (
         <section className="project-details__image-gallery">
           <ImageCarousel paused={openGallery}>
-            {project.gallery.map(({imgURL, alt}, index) => {
-              const i = index+1; // featured + gallery
+            {project.gallery.map(({ src, alt, type }, index) => {
+              const fullscreenIndex = index + 1;
+
+              if (type === "video") {
+                return (
+                  <video
+                    key={index}
+                    src={src}
+                    controls
+                    preload="metadata"
+                    playsInline
+                    onClick={() => {
+                      setIndexGallery(fullscreenIndex);
+                      setOpenGallery(true);
+                    }}
+                  />
+                );
+              }
+
               return (
                 <img
-                  key={i}
-                  src={imgURL}
+                  key={index}
+                  src={src}
                   alt={alt}
                   style={{ cursor: "pointer" }}
                   role="button"
                   tabIndex={0}
                   onClick={() => {
-                    setIndexGallery(i);
+                    setIndexGallery(fullscreenIndex);
                     setOpenGallery(true);
                   }}
                   onKeyDown={(event) => {
                     if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault();
-                      setIndexGallery(i);
+                      setIndexGallery(fullscreenIndex);
                       setOpenGallery(true);
                     }
                   }}
@@ -224,8 +241,8 @@ const ProjectDetails = () => {
       )}
 
       {/* Visor fullscreen */}
-      <ImageFullscreenZoom
-        images={projectGallery}
+      <MediaFullScreenViewer
+        media={projectGallery}
         initialIndex={indexGallery}
         open={openGallery}
         onClose={() => setOpenGallery(false)}

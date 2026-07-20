@@ -1,12 +1,16 @@
 import * as TechLogos from '../../assets/TechLogos';
-import { getProjectImages } from '../../assets/project.images';
+import { getProjectMedia } from '../../assets/project.media';
 
-const images = getProjectImages('solar-system-3d');
+const media = getProjectMedia('solar-system-3d');
 
 export default {
     id: 3,
     slug: "3d-solar-system",
-    src_featured_img: images.cover,
+    featured: {
+        src: media.cover,
+        type: "image",
+        alt: "Sistema Solar 3D",
+    },
     title: "Sistema Solar 3D",
     brief_description:
       "Aplicación web interactiva que representa el sistema solar en 3D, permitiendo explorar los planetas mediante animaciones fluidas y una visualización espacial realista.",
@@ -22,9 +26,9 @@ export default {
       { icon: TechLogos.Vite, label: "Vite" },
     ],
     gallery: [
-    { imgURL: images.gallery[0], alt: "Vista enfocada a Mercurio."},
-    { imgURL: images.gallery[1], alt: "Vista enfocada a Jupiter."},
-    { imgURL: images.gallery[2], alt: "Texto en 3D"},
+    { src: media.gallery[0].src, alt: "Vista enfocada a Mercurio.", type: media.gallery[0].type },
+    { src: media.gallery[1].src, alt: "Vista enfocada a Jupiter.", type: media.gallery[1].type },
+    { src: media.gallery[2].src, alt: "Texto en 3D", type: media.gallery[2].type },
     ],
     challenges: [
       "Sincronizar las animaciones orbitales y rotacionales de todos los planetas para mantener coherencia visual.",

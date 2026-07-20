@@ -10,20 +10,28 @@ import React, { useState, useRef, useEffect } from "react";
  * - Se activa desde un botón
  */
 
-export default function ImageFullscreenZoom({
-  images = [],
+export default function MediaFullScreenViewer({
+  media = [],
   initialIndex = 0,
   open,
   onClose,
   alt = "Imagen",
 }) {
+
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [zoom, setZoom] = useState(false);
+
   const containerRef = useRef(null);
   const dialogRef = useRef(null);
   const closeButtonRef = useRef(null);
   const previouslyFocusedElementRef = useRef(null);
   const wasOpenRef = useRef(false);
+
+  const currentMedia = media[currentIndex];
+
+  if (!currentMedia) return null;
+
+  const isImage = currentMedia.type === "image";
 
   // sincronizar índice al abrir
   useEffect(() => {
@@ -103,12 +111,12 @@ export default function ImageFullscreenZoom({
 
   const nextImage = () => {
     setZoom(false);
-    setCurrentIndex((i) => (i + 1) % images.length);
+    setCurrentIndex((i) => (i + 1) % media.length);
   };
 
   const prevImage = () => {
     setZoom(false);
-    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+    setCurrentIndex((i) => (i === 0 ? media.length - 1 : i - 1));
   };
 
   return (
@@ -119,7 +127,7 @@ export default function ImageFullscreenZoom({
       aria-labelledby="image-gallery-title"
       style={styles.overlay}
     >
-      <h2 id="image-gallery-title" style={styles.visuallyHidden}>Galería de imágenes</h2>
+      <h2 id="image-gallery-title" style={styles.visuallyHidden}>Galería Multimedia</h2>
       {/* Cerrar */}
       <button ref={closeButtonRef} type="button" aria-label="Cerrar galería" style={styles.closeButton} onClick={onClose}>
         <i className="fa-solid fa-xmark" />
@@ -130,22 +138,33 @@ export default function ImageFullscreenZoom({
         ‹
       </button>
 
-      {/* Imagen principal */}
+      {/* Contenido principal */}
       <div
         ref={containerRef}
         style={{
-          ...styles.imageContainer,
-          transform: zoom ? "scale(2)" : "scale(1)",
-          cursor: zoom ? "zoom-out" : "zoom-in",
+            ...styles.imageContainer,
+            transform: isImage && zoom ? "scale(2)" : "scale(1)",
+            cursor: isImage
+                ? (zoom ? "zoom-out" : "zoom-in")
+                : "default",
         }}
-        onClick={handleClickZoom}
-        onMouseMove={(e) => zoom && updateTransformOrigin(e)}
+        onClick={isImage ? handleClickZoom : undefined}
+        onMouseMove={isImage && zoom ? updateTransformOrigin : undefined}
       >
-        <img
-          src={images[currentIndex]}
-          alt={alt}
-          style={styles.image}
-        />
+        {currentMedia.type === "video" ? (
+          <video
+            src={currentMedia.src}
+            controls
+            autoPlay
+            style={styles.video}
+          />
+        ) : (
+          <img
+            src={currentMedia.src}
+            alt={currentMedia.alt}
+            style={styles.image}
+          />
+        )}
       </div>
 
       {/* Flecha derecha */}
@@ -155,11 +174,11 @@ export default function ImageFullscreenZoom({
 
       {/* Thumbnails */}
       <div style={styles.thumbnails}>
-        {images.map((img, index) => (
+        {media.map((item, index) => (
           <button
-            key={img}
+            key={index}
             type="button"
-            aria-label={`Ver imagen ${index + 1}`}
+            aria-label={`Elemento ${index + 1} de la galería`}
             aria-current={index === currentIndex ? "true" : undefined}
             onClick={() => {
               setZoom(false);
@@ -174,7 +193,20 @@ export default function ImageFullscreenZoom({
                   : "2px solid transparent",
             }}
           >
-            <img src={img} alt="" style={styles.thumbnail} />
+            {item.type === "video" ? (
+                <video
+                    src={item.src}
+                    muted
+                    preload="metadata"
+                    style={styles.thumbnail}
+                />
+            ) : (
+                <img
+                    src={item.src}
+                    alt=""
+                    style={styles.thumbnail}
+                />
+            )}
           </button>
         ))}
       </div>
@@ -206,12 +238,19 @@ const styles = {
     pointerEvents: "none",
     userSelect: "none",
   },
+  video: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
+    userSelect: "none",
+  },
   closeButton: {
     position: "absolute",
     top: 10,
     right: 10,
     fontSize: 24,
     cursor: "pointer",
+    zIndex: 10,
   },
   arrow: {
     position: "absolute",
@@ -222,6 +261,7 @@ const styles = {
     border: "none",
     cursor: "pointer",
     transform: "translateY(-50%)",
+    zIndex: 10,
   },
   thumbnails: {
     display: "flex",

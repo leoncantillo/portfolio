@@ -9,7 +9,7 @@ const ProjectCard = ({ project }) => {
         <picture>
           <img
             className='featured-photo'
-            src={project.src_featured_img}
+            src={project.featured.src}
             alt={`Featured image of the ${project.title} project.`}
           />
         </picture>

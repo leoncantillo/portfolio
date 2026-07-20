@@ -1,12 +1,16 @@
 import * as TechLogos from '../../assets/TechLogos';
-import { getProjectImages } from '../../assets/project.images';
+import { getProjectMedia } from '../../assets/project.media';
 
-const images = getProjectImages('miscelanea-ello');
+const media = getProjectMedia('miscelanea-ello');
 
 export default {
     id: 1,
     slug: "miscellaneousello-online-store",
-    src_featured_img: images.cover,
+    featured: {
+        src: media.cover,
+        type: "image",
+        alt: "Miscelanea Ello · Tienda online",
+    },
     title: "Miscelanea Ello · Tienda online",
     brief_description:
       "Tienda online desarrollada en PHP bajo el patrón MVC, con gestión completa de productos, usuarios y pedidos.",
