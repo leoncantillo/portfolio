@@ -25,6 +25,9 @@ export default {
       { icon: TechLogos.Qicon, label: "XAMPP" },
       { icon: TechLogos.Qicon, label: "PHP Mail" },
     ],
+    gallery: [
+      { src: media.gallery[0].src, alt: "Video Demo", type: media.gallery[0].type },
+    ],
     challenges: [
       "Implementación correcta del patrón MVC en PHP puro",
       "Validaciones completas en operaciones CRUD",
@@ -41,5 +44,4 @@ export default {
       "Configuración de entornos locales con XAMPP",
     ],
     repository: "https://github.com/leoncantillo/MiscelaneaELLO",
-    demo: "https://soysena-my.sharepoint.com/:v:/g/personal/ldcantillo78_soy_sena_edu_co/IQBYzpfSXbD1SrkoNTG6v0IpAWJy9SY6LheFyF9ZO-U7bVw?e=GcfinQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D",
   }
