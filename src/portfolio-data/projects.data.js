@@ -1,15 +1,8 @@
 import * as TechLogos from '../assets/TechLogos';
+import reservasuno from './projects/reservasuno';
 
 // Project images
 import imgMiscelaneaEllo from '../assets/images/miscelanea-ello/cover.png';
-import imgReservasUno from '../assets/images/reservasuno/cover.png';
-import imgReservasUnoGallery1 from '../assets/images/reservasuno/1 - Api test endpoint login.png';
-import imgReservasUnoGallery2 from '../assets/images/reservasuno/2 - Api test endpoint flights.png';
-import imgReservasUnoGallery3 from '../assets/images/reservasuno/3 - Test de búsqueda en interfaz gráfica.png';
-import imgReservasUnoGallery4 from '../assets/images/reservasuno/4 - Resultados de búsqueda en interfaz gráfica.png';
-import imgReservasUnoGallery5 from '../assets/images/reservasuno/5 - Vuelos disponibles.png';
-import imgReservasUnoGallery6 from '../assets/images/reservasuno/6 - Buscar vuelo por cédula de cliente.png';
-import imgReservasUnoGallery7 from '../assets/images/reservasuno/7 - Intrerfaz para login.png';
 import imgSolarSystem3D from '../assets/images/solar-system-3d/cover.png';
 import imgSolarSystem3DGallery1 from '../assets/images/solar-system-3d/1 - Vista enfocada a Mercurio.png';
 import imgSolarSystem3DGallery2 from '../assets/images/solar-system-3d/2 - Vista enfocada a Jupiter.png';
@@ -52,54 +45,7 @@ export const projects = [
     repository: "https://github.com/leoncantillo/MiscelaneaELLO",
     demo: "https://soysena-my.sharepoint.com/:v:/g/personal/ldcantillo78_soy_sena_edu_co/IQBYzpfSXbD1SrkoNTG6v0IpAWJy9SY6LheFyF9ZO-U7bVw?e=GcfinQ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D",
   },
-  {
-    id: 2,
-    slug: "reservasuno-airline-system",
-    src_featured_img: imgReservasUno,
-    title: "ReservasUno · Sistema de reservas aéreas",
-    brief_description:
-      "Plataforma web y API REST para la gestión de vuelos y reservas aéreas, con autenticación y flujo completo de búsqueda y selección.",
-    complete_description:
-      "ReservasUno es un proyecto académico de sistema de reservas aéreas que permite a los usuarios buscar vuelos, seleccionar trayectos, gestionar reservas y consultar información asociada. El proyecto integra un frontend web con una API REST desarrollada en Spring Boot, autenticación basada en JWT, transferencia de datos con DTOs y persistencia en PostgreSQL. Fue desarrollado como proyecto de aprendizaje enfocado en arquitectura backend y buenas prácticas iniciales.",
-    role: "Backend Developer",
-    architecture: "Arquitectura monolítica en capas (Controller · Service · Repository)",
-    tech: [
-      { icon: TechLogos.Java, label: "Java" },
-      { icon: TechLogos.Spring, label: "Spring Boot" },
-      { icon: TechLogos.PostgreSQL, label: "PostgreSQL" },
-      { icon: TechLogos.Qicon, label: "Maven" },
-      { icon: TechLogos.Qicon, label: "MapStruct" },
-      { icon: TechLogos.Docker, label: "Docker" },
-      { icon: TechLogos.Qicon, label: "JWT" },
-    ],
-    gallery: [
-      { imgURL: imgReservasUnoGallery1, alt: "Api test /login."},
-      { imgURL: imgReservasUnoGallery2, alt: "Api test /flights."},
-      { imgURL: imgReservasUnoGallery3, alt: "Test de búsqueda en interfaz gráfica."},
-      { imgURL: imgReservasUnoGallery4, alt: "Resultados de búsqueda en interfaz gráfica."},
-      { imgURL: imgReservasUnoGallery5, alt: "Vuelos disponibles."},
-      { imgURL: imgReservasUnoGallery6, alt: "Buscar vuelo por cédula de cliente."},
-      { imgURL: imgReservasUnoGallery7, alt: "Intrerfaz para login."},
-    ],
-    challenges: [
-      "Diseño del modelo de datos para vuelos, reservas y pasajeros",
-      "Implementación de autenticación y autorización con JWT",
-      "Integración entre frontend y API REST",
-      "Mapeo de entidades a estructuras de transferencia de datos",
-    ],
-    impact:
-      "Proyecto base sólido para comprender el desarrollo de APIs REST con Spring Boot, integrando seguridad, persistencia y comunicación con un frontend funcional.",
-    learnings: [
-      "Arquitectura en capas con Spring Boot",
-      "Diseño de APIs REST",
-      "Manejo de dependencias con Maven",
-      "Autenticación y roles con JWT",
-      "Persistencia de datos con JPA y PostgreSQL",
-      "Mapeo de entidades con MapStruct",
-      "Buenas prácticas iniciales en backend",
-    ],
-    repository: "https://github.com/ldcantillom/reservasuno-backend",
-  },
+  reservasuno,
   {
     id: 3,
     slug: "3d-solar-system",
