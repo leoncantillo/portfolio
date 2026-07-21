@@ -1,8 +1,8 @@
 import { projects } from "../portfolio-data/projects.data";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import PixelGlitchImage from '../components/PixelGlitchImage';
 import { useEffect, useRef, useState } from "react";
-import ImageFullscreenZoom from "../components/ImageFullscreenZoom";
+import MediaFullScreenViewer from "../components/MediaFullScreenViewer";
 import TechItem from '../components/TechItem';
 import Layout from "../components/Layout";
 import '../styles/ProjectDetails.scss';
@@ -19,14 +19,7 @@ const ProjectDetails = () => {
   );
 
   if (!project) {
-    return (
-      <section className="project-404">
-        <h2>404 Proyecto no encontrado</h2>
-        <p>El proyecto que buscas no existe o fue movido.</p>
-        <br/>
-        <Link to="/" className="button">Volver a la página principal</Link>
-      </section>
-    );
+    return <Navigate to="/404" replace />;
   }
 
   useEffect(() => {
@@ -51,9 +44,9 @@ const ProjectDetails = () => {
       : null;
 
   const projectGallery = [
-  project.src_featured_img,
-  ...(project.gallery?.map(item => item.imgURL) ?? [])
-];
+    project.featured,
+    ...(project.gallery ?? []),
+  ];
 
   return (
     <Layout as='article' className="project-details">
@@ -62,13 +55,13 @@ const ProjectDetails = () => {
         <input type="checkbox" name="show-featured-image" id="show-featured-image" />
         <label htmlFor="show-featured-image" className="glitch-wrapper">
           <picture>
-            <source srcSet={project.src_featured_img} />
+            <source srcSet={project.featured.src} />
 
             <img
               ref={featuredImgRef}
               className="featured-photo"
-              src={project.src_featured_img}
-              alt={`Featured image of the ${project.title} project.`}
+              src={project.featured.src}
+              alt={project.featured.alt}
             />
           </picture>
           <PixelGlitchImage imgRef={featuredImgRef} />
@@ -108,24 +101,41 @@ const ProjectDetails = () => {
       {project.gallery?.length > 0 && (
         <section className="project-details__image-gallery">
           <ImageCarousel paused={openGallery}>
-            {project.gallery.map(({imgURL, alt}, index) => {
-              const i = index+1; // featured + gallery
+            {project.gallery.map(({ src, alt, type }, index) => {
+              const fullscreenIndex = index + 1;
+
+              if (type === "video") {
+                return (
+                  <video
+                    key={index}
+                    src={src}
+                    controls
+                    preload="metadata"
+                    playsInline
+                    onClick={() => {
+                      setIndexGallery(fullscreenIndex);
+                      setOpenGallery(true);
+                    }}
+                  />
+                );
+              }
+
               return (
                 <img
-                  key={i}
-                  src={imgURL}
+                  key={index}
+                  src={src}
                   alt={alt}
                   style={{ cursor: "pointer" }}
                   role="button"
                   tabIndex={0}
                   onClick={() => {
-                    setIndexGallery(i);
+                    setIndexGallery(fullscreenIndex);
                     setOpenGallery(true);
                   }}
                   onKeyDown={(event) => {
                     if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault();
-                      setIndexGallery(i);
+                      setIndexGallery(fullscreenIndex);
                       setOpenGallery(true);
                     }
                   }}
@@ -171,49 +181,24 @@ const ProjectDetails = () => {
       )}
 
       {/* Enlaces */}
-      {(project.repository || project.demo) && (
+      {project.links?.length > 0 && (
         <footer className="project-details__links">
           <h2>Enlaces</h2>
 
           <ul>
-            {project.repository && (
-              <li>
+            {project.links.map(({ label, url, icon }) => (
+              <li key={label}>
                 <a
                   className="button"
-                  href={project.repository}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa-brands fa-github"></i>Repositorio
+                  <i className={icon}></i>
+                  {label}
                 </a>
               </li>
-            )}
-
-            {project.demo && (
-              <li>
-                <a
-                  className="button"
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-solid fa-pager"></i>Demo
-                </a>
-              </li>
-            )}
-
-            {project.data_base && (
-              <li>
-                <a
-                  className="button"
-                  href={project.data_base}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-solid fa-database"></i>Base de Datos
-                </a>
-              </li>
-            )}
+            ))}
           </ul>
 
           <nav className="project-details__pagination">
@@ -237,8 +222,8 @@ const ProjectDetails = () => {
       )}
 
       {/* Visor fullscreen */}
-      <ImageFullscreenZoom
-        images={projectGallery}
+      <MediaFullScreenViewer
+        media={projectGallery}
         initialIndex={indexGallery}
         open={openGallery}
         onClose={() => setOpenGallery(false)}
