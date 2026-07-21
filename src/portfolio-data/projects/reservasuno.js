@@ -53,5 +53,8 @@ export default {
     "Mapeo de entidades con MapStruct",
     "Buenas prácticas iniciales en backend",
     ],
-    repository: "https://github.com/ldcantillom/reservasuno-backend",
+    links: [
+      { label: "Repositorio Server", url: "https://github.com/ldcantillom/reservasuno-backend", icon: "fa-brands fa-github" },
+      { label: "Repositorio Client", url: "https://github.com/ldcantillom/reservasuno-frontend", icon: "fa-brands fa-github" }
+    ],
 };

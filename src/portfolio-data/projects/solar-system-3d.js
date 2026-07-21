@@ -43,6 +43,8 @@ export default {
       "Animación basada en eventos y control del estado visual.",
       "Optimización de escenas 3D para aplicaciones web.",
     ],
-    repository: "https://github.com/leoncantillo/learning_threejs",
-    demo: "https://leoncantillo.github.io/learning_threejs/#/practice_3",
+    links: [
+      { label: "Repositorio", url: "https://github.com/leoncantillo/learning_threejs", icon: "fa-brands fa-github" },
+      { label: "Demo", url: "https://leoncantillo.github.io/learning_threejs/#/practice_3", icon: "fa-solid fa-pager" },
+    ],
 };

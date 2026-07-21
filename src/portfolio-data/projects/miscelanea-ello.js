@@ -43,5 +43,7 @@ export default {
       "Gestión de flujo de datos y lógica de negocio",
       "Configuración de entornos locales con XAMPP",
     ],
-    repository: "https://github.com/leoncantillo/MiscelaneaELLO",
+    links: [
+      { label: "Repositorio", url: "https://github.com/leoncantillo/MiscelaneaELLO", icon: "fa-brands fa-github" },
+    ],
   }

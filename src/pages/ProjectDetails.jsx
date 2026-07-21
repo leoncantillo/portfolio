@@ -181,36 +181,24 @@ const ProjectDetails = () => {
       )}
 
       {/* Enlaces */}
-      {(project.repository || project.demo) && (
+      {project.links?.length > 0 && (
         <footer className="project-details__links">
           <h2>Enlaces</h2>
 
           <ul>
-            {project.repository && (
-              <li>
+            {project.links.map(({ label, url, icon }) => (
+              <li key={label}>
                 <a
                   className="button"
-                  href={project.repository}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa-brands fa-github"></i>Repositorio
+                  <i className={icon}></i>
+                  {label}
                 </a>
               </li>
-            )}
-
-            {project.demo && (
-              <li>
-                <a
-                  className="button"
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-solid fa-pager"></i>Demo
-                </a>
-              </li>
-            )}
+            ))}
           </ul>
 
           <nav className="project-details__pagination">
