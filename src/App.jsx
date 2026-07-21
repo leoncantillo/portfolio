@@ -4,6 +4,7 @@ import ProjectDetails from './pages/ProjectDetails';
 import ProjectsArchive from './pages/ProjectsArchive';
 import SwitchTheme from './components/SwitchTheme';
 import BackHome from './components/BackHome';
+import NotFound_404 from './pages/NotFound_404';
 
 function App() {
 
@@ -28,6 +29,18 @@ function App() {
             <>
               <ProjectDetails />
               <BackHome />
+              <SwitchTheme />
+            </>
+          } />
+          <Route path="404" element={
+            <>
+              <NotFound_404 />
+              <SwitchTheme />
+            </>
+          } />
+          <Route path="*" element={
+            <>
+              <NotFound_404 />
               <SwitchTheme />
             </>
           } />

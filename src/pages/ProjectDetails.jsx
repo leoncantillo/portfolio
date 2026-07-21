@@ -1,5 +1,5 @@
 import { projects } from "../portfolio-data/projects.data";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import PixelGlitchImage from '../components/PixelGlitchImage';
 import { useEffect, useRef, useState } from "react";
 import MediaFullScreenViewer from "../components/MediaFullScreenViewer";
@@ -19,14 +19,7 @@ const ProjectDetails = () => {
   );
 
   if (!project) {
-    return (
-      <section className="project-404">
-        <h2>404 Proyecto no encontrado</h2>
-        <p>El proyecto que buscas no existe o fue movido.</p>
-        <br/>
-        <Link to="/" className="button">Volver a la página principal</Link>
-      </section>
-    );
+    return <Navigate to="/404" replace />;
   }
 
   useEffect(() => {
