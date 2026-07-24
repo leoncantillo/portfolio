@@ -26,9 +26,9 @@ export default {
       { icon: TechLogos.Vite, label: "Vite" },
     ],
     gallery: [
-    { src: media.gallery[0].src, alt: "Vista enfocada a Mercurio.", type: media.gallery[0].type },
-    { src: media.gallery[1].src, alt: "Vista enfocada a Jupiter.", type: media.gallery[1].type },
-    { src: media.gallery[2].src, alt: "Texto en 3D", type: media.gallery[2].type },
+    { src: media.gallery[0].src, alt: media.gallery[0].alt, type: media.gallery[0].type },
+    { src: media.gallery[1].src, alt: media.gallery[1].alt, type: media.gallery[1].type },
+    { src: media.gallery[2].src, alt: media.gallery[2].alt, type: media.gallery[2].type },
     ],
     challenges: [
       "Sincronizar las animaciones orbitales y rotacionales de todos los planetas para mantener coherencia visual.",
