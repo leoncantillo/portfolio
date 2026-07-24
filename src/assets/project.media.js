@@ -8,6 +8,13 @@ const modules = import.meta.glob(
 
 const VIDEO_EXTENSIONS = ['mp4', 'webm', 'mov'];
 
+function getAltFromFilename(filename) {
+  return filename
+    .replace(/\.[^.]+$/, '')      // Elimina la extensión
+    .replace(/^\d+\s*-\s*/, '')   // Elimina "1 - ", "12 - ", etc.
+    .trim();
+}
+
 export function getProjectMedia(projectFolder) {
   const projectFiles = Object.entries(modules)
     .filter(([path]) => path.includes(`/images/${projectFolder}/`))
@@ -39,6 +46,7 @@ export function getProjectMedia(projectFolder) {
       order: Number(match[1]),
       src: file.src,
       type: VIDEO_EXTENSIONS.includes(extension) ? 'video' : 'image',
+      alt: getAltFromFilename(fileName),
       filename: fileName,
     });
   });

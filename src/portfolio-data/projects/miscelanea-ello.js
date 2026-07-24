@@ -26,7 +26,7 @@ export default {
       { icon: TechLogos.Qicon, label: "PHP Mail" },
     ],
     gallery: [
-      { src: media.gallery[0].src, alt: "Video Demo", type: media.gallery[0].type },
+      { src: media.gallery[0].src, alt: media.gallery[0].alt, type: media.gallery[0].type },
     ],
     challenges: [
       "Implementación correcta del patrón MVC en PHP puro",
