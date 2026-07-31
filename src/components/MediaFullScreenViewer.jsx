@@ -14,8 +14,7 @@ export default function MediaFullScreenViewer({
   media = [],
   initialIndex = 0,
   open,
-  onClose,
-  alt = "Imagen",
+  onClose
 }) {
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);

@@ -46,4 +46,4 @@ export default {
     links: [
       { label: "Repositorio", url: "https://github.com/leoncantillo/MiscelaneaELLO", icon: "fa-brands fa-github" },
     ],
-  }
+  };
